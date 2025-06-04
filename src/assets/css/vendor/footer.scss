@@ -1,13 +1,15 @@
 .footer__logo {
 	width: 100%;
 	overflow: hidden;
+
 	svg {
 		width: 100%;
 		height: auto;
 		opacity: 0.1;
 		transform: scale(1.1);
 		transition: 3s;
-		path{
+
+		path {
 			stroke-dasharray: 250;
 			stroke-dashoffset: 250;
 			fill: #80684a00;
@@ -18,6 +20,7 @@
 	&.animated {
 		svg {
 			transform: scale(1);
+
 			path {
 				stroke-dashoffset: 0;
 				fill: #80684a;
@@ -26,48 +29,124 @@
 	}
 }
 
-.container_footer{
+.container_footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 60px;
-	padding-bottom: 10px;
+	overflow: hidden;
+
+	@media(min-width: 850px) {
+		position: relative;
+		padding: 0 40px;
+	}
 }
 
-.footer__links{
+.footer__links {
+	@media(min-width: 850px) {
+		width: 700px;
+		flex-direction: row;
+		gap: 0;
+		justify-content: center;
+		transition: 1s;
+		opacity: 0;
+
+		li {
+			display: contents;
+
+			&:not(:last-child)::after {
+				content: "/";
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		&.animated {
+			width: 100%;
+			opacity: 1;
+		}
+	}
+
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 	text-align: center;
 	margin-bottom: 40px;
+	transform: scale(1.1);
+	transition: 0.8s;
 
-	a{
+	a {
 		color: $text-grey;
 		font-family: Manrope;
 		font-weight: 500;
 		font-size: 18px;
 		text-transform: uppercase;
 	}
+
+	li {
+		transform: rotate3d(1, 0, 0, 90deg);
+		transition: 0.8s;
+	}
+
+	&.animated {
+		transform: scale(1);
+
+		li {
+			transform: rotate3d(0, 0, 0, 90deg);
+		}
+	}
 }
 
 .image {
 	width: 153px;
 	margin-bottom: 40px;
+	transition: 0.8s;
+	transform: scale(1.1);
+	opacity: 0;
+
+	&.animated {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 
-.footer__info{
+.footer__info {
 	margin-bottom: 30px;
 	text-align: center;
 	color: $text-grey;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-	p, a{
+	transition: 0.6s;
+	transform: scale(0);
+
+	@media(min-width: 850px) {
+		order: 2;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 0;
+		position: absolute;
+		left: 40px;
+		bottom: 35px;
+		z-index: 2;
+		width:calc(50% + 23px);
+		transform: translateY(40px);
+		p,
+		a {
+			font-size: 16px;
+		}
+	}
+
+	p,
+	a {
 		font-family: Manrope;
 		font-weight: 500;
 		font-size: 12px;
-		line-height: 20px;
 		text-align: center;
 		text-transform: uppercase;
+	}
+
+	&.animated {
+		transform: scale(1);
+		transform: translateY(0);
 	}
 }

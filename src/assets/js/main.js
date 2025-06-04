@@ -16,7 +16,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, {
   threshold: 0.5,
-  rootMargin: '100px',
+  rootMargin: '50px',
 });
 
 const animatedItems = document.querySelectorAll(".to_animate")

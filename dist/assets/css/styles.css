@@ -389,6 +389,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 15px;
+  overflow: hidden;
 }
 
 .header__logo-wrapper {
@@ -399,6 +400,8 @@ body {
 .header__logo-wrapper svg {
   width: 100%;
   height: auto;
+  transform: scale(1.1);
+  transition: 3s;
 }
 .header__logo-wrapper svg path {
   stroke-dasharray: 250;
@@ -406,11 +409,20 @@ body {
   animation: driving 3s linear;
   fill: #80684a;
 }
+.header__logo-wrapper.animated svg {
+  transform: scale(1);
+}
 
 .header__buttons {
   display: flex;
   align-items: center;
+  gap: 10px;
+  transform: translate(50px);
+  transition: 1s;
+}
+.header__buttons.animated {
   gap: 20px;
+  transform: translate(0);
 }
 
 .header__burger {
@@ -529,6 +541,8 @@ body {
     position: static;
     padding: 0;
     background-color: #FFF9F3;
+    transform: translateX(-100px);
+    transition: 1s;
   }
   .header__navigation > ul {
     padding: 0;
@@ -537,8 +551,9 @@ body {
     gap: 0;
   }
   .header__navigation > ul li:not(:last-child)::after {
+    transition: 1s;
     content: "/";
-    padding: 0 20px;
+    padding: 0 5px;
     color: #80684A;
     font-family: Manrope;
     font-weight: 400;
@@ -547,7 +562,20 @@ body {
 }
 @media (min-width: 1024px) and (max-width: 1130px) {
   .header__navigation > ul li:not(:last-child)::after {
-    padding: 0 15px;
+    padding: 0 5px;
+  }
+}
+@media (min-width: 1024px) {
+  .header__navigation.animated {
+    transform: translateX(0);
+  }
+  .header__navigation.animated > ul li:not(:last-child)::after {
+    padding: 0 20px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1130px) {
+  .header__navigation.animated > ul li:not(:last-child)::after {
+    padding: 0 10px;
   }
 }
 @media (min-width: 1024px) {
@@ -588,7 +616,14 @@ body {
     margin-right: auto;
   }
   .header__buttons {
+    transform: translateX(50px);
+    gap: 10px;
     justify-content: flex-end;
+    transition: 1s;
+  }
+  .header__buttons.animated {
+    transform: translateX(0);
+    gap: 20px;
   }
   .header__button img {
     display: none;
@@ -662,8 +697,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px;
-  padding-bottom: 10px;
+  overflow: hidden;
+}
+@media (min-width: 850px) {
+  .container_footer {
+    position: relative;
+    padding: 0 40px;
+  }
 }
 
 .footer__links {
@@ -672,6 +712,30 @@ body {
   gap: 10px;
   text-align: center;
   margin-bottom: 40px;
+  transform: scale(1.1);
+  transition: 0.8s;
+}
+@media (min-width: 850px) {
+  .footer__links {
+    width: 700px;
+    flex-direction: row;
+    gap: 0;
+    justify-content: center;
+    transition: 1s;
+    opacity: 0;
+  }
+  .footer__links li {
+    display: contents;
+  }
+  .footer__links li:not(:last-child)::after {
+    content: "/";
+    display: block;
+    margin: 0 auto;
+  }
+  .footer__links.animated {
+    width: 100%;
+    opacity: 1;
+  }
 }
 .footer__links a {
   color: #333333;
@@ -680,10 +744,27 @@ body {
   font-size: 18px;
   text-transform: uppercase;
 }
+.footer__links li {
+  transform: rotate3d(1, 0, 0, 90deg);
+  transition: 0.8s;
+}
+.footer__links.animated {
+  transform: scale(1);
+}
+.footer__links.animated li {
+  transform: rotate3d(0, 0, 0, 90deg);
+}
 
 .image {
   width: 153px;
   margin-bottom: 40px;
+  transition: 0.8s;
+  transform: scale(1.1);
+  opacity: 0;
+}
+.image.animated {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .footer__info {
@@ -693,12 +774,36 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  transition: 0.6s;
+  transform: scale(0);
 }
-.footer__info p, .footer__info a {
+@media (min-width: 850px) {
+  .footer__info {
+    order: 2;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0;
+    position: absolute;
+    left: 40px;
+    bottom: 35px;
+    z-index: 2;
+    width: calc(50% + 23px);
+    transform: translateY(40px);
+  }
+  .footer__info p,
+  .footer__info a {
+    font-size: 16px;
+  }
+}
+.footer__info p,
+.footer__info a {
   font-family: Manrope;
   font-weight: 500;
   font-size: 12px;
-  line-height: 20px;
   text-align: center;
   text-transform: uppercase;
+}
+.footer__info.animated {
+  transform: scale(1);
+  transform: translateY(0);
 }

@@ -23,6 +23,7 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 15px;
+	overflow: hidden;
 }
 
 .header__logo-wrapper {
@@ -33,6 +34,8 @@
 	svg {
 		width: 100%;
 		height: auto;
+		transform: scale(1.1);
+		transition: 3s;
 
 		path{
 			stroke-dasharray: 250;
@@ -41,12 +44,25 @@
 			fill: #80684a;
 		}
 	}
+
+	&.animated{
+		svg{
+			transform: scale(1);
+		}
+	}
 }
 
 .header__buttons {
 	display: flex;
 	align-items: center;
-	gap: 20px;
+	gap: 10px;
+	transform: translate(50px);
+	transition: 1s;
+
+	&.animated{
+		gap: 20px;
+		transform: translate(0);
+	}
 }
 
 .header__burger {
@@ -176,6 +192,8 @@
 		position: static;
 		padding: 0;
 		background-color: $background-soft;
+		transform: translateX(-100px);
+		transition: 1s;
 
 		>ul {
 			padding: 0;
@@ -184,14 +202,27 @@
 			gap: 0;
 
 			li:not(:last-child)::after {
+				transition: 1s;
 				content: "/";
-				padding: 0 20px;
+				padding: 0 5px;
 				color: $main;
 				font-family: Manrope;
 				font-weight: 400;
 				font-size: 16px;
 				@media(max-width: 1130px){
-					padding: 0 15px;
+					padding: 0 5px;
+				}
+			}
+		}
+
+		&.animated{
+			transform: translateX(0);
+			>ul {
+				li:not(:last-child)::after {
+					padding: 0 20px;
+					@media(max-width: 1130px){
+					padding: 0 10px;
+				}
 				}
 			}
 		}
@@ -233,7 +264,15 @@
 	}
 
 	.header__buttons {
+		transform: translateX(50px);
+		gap: 10px;
 		justify-content: flex-end;
+		transition: 1s;
+
+		&.animated{
+			transform: translateX(0);
+			gap: 20px;
+		}
 	}
 
 	.header__button {
