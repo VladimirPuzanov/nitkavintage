@@ -1,10 +1,51 @@
 $dark : #80684A;
+$text-grey: #333333;
+$background-soft: #FFF9F3;
+$white: #FFF;
+$main: #80684A;
 
+@import 'vendor/font';
 @import 'vendor/_normalize';
 
-.container{
+html {
+	&.lock {
+		max-height: 100vh;
+		overflow: hidden;
+
+		&::after {
+			top: 0;
+			height: 0;
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			display: block;
+			z-index: 3;
+			opacity: 1;
+			background-color: #00000080;
+			animation: darkness 0.5s linear;
+		}
+	}
+}
+
+body{
+	background-color: #FFF9F3;
+}
+
+@keyframes darkness{
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+
+.container {
 	padding: 0 15px;
 }
 
-@import 'vendor/header'
+@import 'vendor/header';
 
+@import 'vendor/footer.scss';

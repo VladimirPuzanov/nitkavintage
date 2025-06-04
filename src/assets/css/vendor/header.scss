@@ -1,34 +1,61 @@
-.container_header{
+@keyframes driving{
+	0%{
+		fill: #80684a00;
+		stroke-dashoffset: 250;
+	}
+
+	30%{
+		fill: #80684a00;
+	}
+
+	100%{
+		stroke-dashoffset: 0;
+		fill: #80684a;
+	}
+}
+
+.header{
+	box-shadow: 0px 3px 4px 0px #33333325;
+}
+
+.container_header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 15px;
 }
 
-.header__logo-wrapper{
+.header__logo-wrapper {
 	display: block;
 	width: 100%;
 	max-width: 127px;
 
-	img{
+	svg {
 		width: 100%;
 		height: auto;
+
+		path{
+			stroke-dasharray: 250;
+			stroke-dashoffset: 0;
+			animation: driving 3s linear;
+			fill: #80684a;
+		}
 	}
 }
 
-.header__buttons{
+.header__buttons {
 	display: flex;
 	align-items: center;
 	gap: 20px;
 }
 
-.header__burger{
+.header__burger {
 	width: 40px;
 	height: 40px;
 	position: relative;
 	background-color: #F4EBE2;
 
-	&::after{
+	&::after {
 		content: "";
 		display: block;
 		height: 2px;
@@ -40,7 +67,7 @@
 		transition: 0.5s;
 	}
 
-	&::before{
+	&::before {
 		content: "";
 		display: block;
 		height: 2px;
@@ -53,14 +80,16 @@
 	}
 }
 
-.header__navigation{
+.header__navigation {
 	padding: 0 15px;
 	position: absolute;
 	top: 100%;
-	left: 0;
+	right: 100%;
 	background-color: #F4EBE2;
 	width: 100%;
-	ul{
+	transition: 0.5s;
+
+	>ul {
 		padding: 40px 0 32px;
 		display: flex;
 		flex-direction: column;
@@ -68,21 +97,189 @@
 		align-items: center;
 		border-bottom: 1px solid $dark;
 	}
+
+	a {
+		font-family: 'Manrope';
+		font-weight: 500;
+		font-size: 18px;
+		text-transform: uppercase;
+		color: $text-grey;
+	}
 }
 
-.header{
+.header__info_mobile {
+	padding: 32px 0 40px;
+}
+
+.header__info_mobile ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.header__button-text {
+	display: none;
+}
+
+.header__button {
 	position: relative;
-	&.active{
-		.header__burger{
-			&::after{
-				top:19px;
+}
+
+.header__button-count {
+	position: absolute;
+	background-color: $dark;
+	color: $white;
+	width: 16px;
+	height: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	border: solid 2px $background-soft;
+	z-index: 1;
+	top: -6px;
+	right: -10px;
+	font-family: Manrope;
+	font-weight: 500;
+	font-size: 8px;
+	opacity: 0;
+}
+
+.header {
+	position: sticky;
+	z-index: 5;
+	top: 0;
+	background-color: $background-soft;
+
+	&.active {
+		.header__navigation {
+			right: 0;
+		}
+
+		.header__burger {
+			&::after {
+				top: 19px;
 				transform: rotate(135deg);
 			}
 
-			&::before{
+			&::before {
 				top: 19px;
 				transform: rotate(-135deg)
 			}
 		}
+	}
+}
+
+@media(min-width: 1024px) {
+	.header__navigation {
+		position: static;
+		padding: 0;
+		background-color: $background-soft;
+
+		>ul {
+			padding: 0;
+			flex-direction: row;
+			border: none;
+			gap: 0;
+
+			li:not(:last-child)::after {
+				content: "/";
+				padding: 0 20px;
+				color: $main;
+				font-family: Manrope;
+				font-weight: 400;
+				font-size: 16px;
+				@media(max-width: 1130px){
+					padding: 0 15px;
+				}
+			}
+		}
+
+		a {
+			font-size: 16px;
+
+			@media(max-width: 1130px){
+				font-size: 14px
+			}
+		}
+	}
+
+	.header__info_mobile {
+		display: none;
+	}
+
+	.container_header {
+		justify-content: center;
+		padding: 20px 40px 18px;
+
+		>* {
+			flex: 1;
+		}
+	}
+
+	.header__navigation {
+		width: auto;
+		min-width: 600px;
+		@media(max-width: 1130px){
+			min-width: 500px;
+		}
+	}
+
+	.header__logo-wrapper {
+		max-width: 169px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.header__buttons {
+		justify-content: flex-end;
+	}
+
+	.header__button {
+		img {
+			display: none;
+		}
+
+		p {
+			font-family: Manrope;
+			font-weight: 500;
+			font-size: 16px;
+			text-transform: uppercase;
+			@media(max-width: 1130px){
+				font-size: 14px;
+			}
+		}
+
+		.header__button-text {
+			display: inline;
+		}
+
+		.header__button-count {
+			position: static;
+			display: inline;
+			color: $text-grey;
+			opacity: 0.6;
+			width: auto;
+			height: auto;
+			border: none;
+			background-color: transparent;
+			font-family: Manrope;
+			font-weight: 500;
+			font-size: 16px;
+			text-transform: uppercase;
+
+			&::after {
+				content: ")";
+			}
+
+			&::before {
+				content: "(";
+			}
+		}
+	}
+
+	.header__burger {
+		display: none;
 	}
 }
