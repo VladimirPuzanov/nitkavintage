@@ -1,21 +1,17 @@
-@keyframes driving{
-	0%{
+@keyframes driving {
+	0% {
 		fill: #80684a00;
 		stroke-dashoffset: 250;
 	}
 
-	30%{
+	30% {
 		fill: #80684a00;
 	}
 
-	100%{
+	100% {
 		stroke-dashoffset: 0;
 		fill: #80684a;
 	}
-}
-
-.header{
-	box-shadow: 0px 3px 4px 0px #33333325;
 }
 
 .container_header {
@@ -37,7 +33,7 @@
 		transform: scale(1.1);
 		transition: 3s;
 
-		path{
+		path {
 			stroke-dasharray: 250;
 			stroke-dashoffset: 0;
 			animation: driving 3s linear;
@@ -45,8 +41,8 @@
 		}
 	}
 
-	&.animated{
-		svg{
+	&.animated {
+		svg {
 			transform: scale(1);
 		}
 	}
@@ -59,7 +55,7 @@
 	transform: translate(50px);
 	transition: 1s;
 
-	&.animated{
+	&.animated {
 		gap: 20px;
 		transform: translate(0);
 	}
@@ -120,6 +116,25 @@
 		font-size: 18px;
 		text-transform: uppercase;
 		color: $text-grey;
+		position: relative;
+
+		@media(hover : hover) {
+			&::after {
+				content: "";
+				display: block;
+				background-color: $text-grey;
+				width: 0;
+				height: 1px;
+				position: absolute;
+				transition: 0.6s;
+			}
+
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 
@@ -209,20 +224,23 @@
 				font-family: Manrope;
 				font-weight: 400;
 				font-size: 16px;
-				@media(max-width: 1130px){
+
+				@media(max-width: 1130px) {
 					padding: 0 5px;
 				}
 			}
 		}
 
-		&.animated{
+		&.animated {
 			transform: translateX(0);
+
 			>ul {
 				li:not(:last-child)::after {
 					padding: 0 20px;
-					@media(max-width: 1130px){
-					padding: 0 10px;
-				}
+
+					@media(max-width: 1130px) {
+						padding: 0 10px;
+					}
 				}
 			}
 		}
@@ -230,7 +248,7 @@
 		a {
 			font-size: 16px;
 
-			@media(max-width: 1130px){
+			@media(max-width: 1130px) {
 				font-size: 14px
 			}
 		}
@@ -252,7 +270,8 @@
 	.header__navigation {
 		width: auto;
 		min-width: 600px;
-		@media(max-width: 1130px){
+
+		@media(max-width: 1130px) {
 			min-width: 500px;
 		}
 	}
@@ -269,7 +288,7 @@
 		justify-content: flex-end;
 		transition: 1s;
 
-		&.animated{
+		&.animated {
 			transform: translateX(0);
 			gap: 20px;
 		}
@@ -285,8 +304,30 @@
 			font-weight: 500;
 			font-size: 16px;
 			text-transform: uppercase;
-			@media(max-width: 1130px){
+
+			@media(max-width: 1130px) {
 				font-size: 14px;
+			}
+
+			position:relative;
+
+			@media(hover : hover) {
+				&::after {
+					content: "";
+					display: block;
+					background-color: $text-grey;
+					width: 0;
+					height: 1px;
+					bottom: -3px;
+					position: absolute;
+					transition: 0.6s;
+				}
+
+				&:hover {
+					&::after {
+						width: 100%;
+					}
+				}
 			}
 		}
 

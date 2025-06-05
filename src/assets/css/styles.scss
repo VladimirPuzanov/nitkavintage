@@ -1,11 +1,14 @@
 $dark : #80684A;
 $text-grey: #333333;
 $background-soft: #FFF9F3;
+$background-white: #FFFBF5;
 $white: #FFF;
 $main: #80684A;
+$brown: #80684A;
 
 @import 'vendor/font';
 @import 'vendor/_normalize';
+@import 'vendor/animations';
 
 html {
 	&.lock {
@@ -28,16 +31,16 @@ html {
 	}
 }
 
-body{
+body {
 	background-color: #FFF9F3;
 }
 
-@keyframes darkness{
-	0%{
+@keyframes darkness {
+	0% {
 		opacity: 0;
 	}
 
-	100%{
+	100% {
 		opacity: 1;
 	}
 }
@@ -46,6 +49,20 @@ body{
 	padding: 0 15px;
 }
 
-@import 'vendor/header';
+.section-title {
+	font-family: Manrope;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+	color: $text-grey;
 
-@import 'vendor/footer.scss';
+	span {
+		font-family: Playfair Display;
+		color: $brown;
+	}
+}
+
+@import 'vendor/header';
+@import 'vendor/intro_main';
+@import 'vendor/collection';
+@import 'vendor/footer';

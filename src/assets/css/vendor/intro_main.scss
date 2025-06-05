@@ -1,0 +1,156 @@
+.intro {
+	padding-top: 10px;
+	margin-bottom: 15px;
+	@media(min-width: 1024px){
+		margin-bottom: 40px;
+	}
+}
+
+.container_intro {
+	@media(min-width: 1024px) {
+		display: flex;
+		justify-content: space-between;
+		gap: 40px;
+		padding: 0 40px;
+	}
+}
+
+.intro__col {
+	@media(min-width: 1024px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-basis: calc(50% - 20px);
+	}
+}
+
+.intro__image {
+	aspect-ratio: 1;
+	overflow: hidden;
+	margin: -5px;
+	margin-bottom: 35px;
+
+	@media(min-width: 1024px) {
+		margin: 0;
+		margin-right: -10px;
+		order: 2;
+		aspect-ratio: 15/16;
+		flex-basis: calc(50% - 20px);
+	}
+
+
+	picture {
+		mask-image: url("../img/header/image-mask.svg");
+		width: auto;
+		height: 100%;
+		transform: translateY(-10%);
+		transition: all 2s, transform 0.8s;
+		mask-size: 110% 110%;
+		mask-position: center;
+		@media(min-width: 1024px) {
+			transform: translateX(25%);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&.animated {
+		picture {
+			mask-size: 100% 100%;
+			transform: none;
+		}
+	}
+}
+
+.intro__image-border {
+	display: none;
+	@media(min-width: 1024px){
+		display: block;
+		transition: 1s;
+		width: 205px;
+		margin-top: auto;
+		margin-bottom: 40px;
+	}
+}
+
+
+.intro__title {
+	width: 100%;
+	max-width: 500px;
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 26px;
+	text-align: center;
+	text-transform: uppercase;
+	color: $text-grey;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	transition: 1s;
+
+	@media(min-width: 1024px) {
+		font-size: 48px;
+		max-width: 625px;
+	}
+
+	span {
+		color: $brown;
+		font-family: Playfair Display;
+		font-style: italic;
+	}
+}
+
+.intro__button {
+	margin: 0 auto;
+	display: flex;
+	width: 100%;
+	max-width: 500px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	background-color: $brown;
+	transition: 1.2s;
+	@media(min-width: 1024px){
+		margin-top: auto;
+		max-width: 1024px;
+		span{
+			font-size: 16px;
+		}
+	}
+
+	span {
+		font-family: Manrope;
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: $background-soft;
+
+		&::after {
+			content: " /";
+			transition: 0.5s;
+		}
+
+		&::before {
+			content: "/ ";
+			transition: 0.5s;
+		}
+	}
+
+	&:hover{
+		box-shadow: 0 0 6px 0px $brown;
+		span{
+			&::after{
+				margin-left: 15px;
+			}
+			&::before{
+				margin-right: 15px;
+			}
+		}
+	}
+}

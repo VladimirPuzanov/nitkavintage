@@ -1,0 +1,32 @@
+.down-fade {
+	&.to_animate {
+		opacity: 0;
+		transform: translateY(50px);
+
+		&.animated {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+.up-fade {
+	&.to_animate {
+		opacity: 0;
+		transform: translateY(-50px);
+
+		&.animated {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+.rotate-left{
+	&.to_animate{
+		transform: rotate3d(0, 1, 0, 90deg);
+		&.animated{
+			transform: none;
+		}
+	}
+}

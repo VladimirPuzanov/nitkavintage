@@ -1,0 +1,143 @@
+.collection {
+	margin-bottom: 75px;
+	@media(min-width: 1024px){
+		margin-bottom: 240px;
+	}
+}
+
+.container_collection{
+	@media(min-width: 1024px){
+		padding: 0 40px;
+	}
+}
+
+.collection__wrapper {
+	padding: 90px 15px;
+	background-image: url("../img/collection/collection.jpg");
+	background-attachment: fixed;
+
+	@media(min-width: 1024px) {
+		padding: 152px 15px;
+	}
+}
+
+.collection__content {
+	mask-image: url("../img/collection/collection-mask.svg");
+	mask-size: 100% auto;
+	mask-position: 50% 0%;
+	background-color: $background-white;
+	padding: 10px;
+	padding-top: 195px;
+	width: 100%;
+	max-width: 290px;
+	margin: 0 auto;
+	margin-bottom: 2px;
+	transition: 1s;
+
+	@media(min-width: 1024px) {
+		max-width: 600px;
+		padding-top: 390px;
+	}
+}
+
+.collection__title {
+	span {
+		display: inline-block;
+		width: 100%;
+	}
+
+	font-size: 22px;
+	margin-bottom: 15px;
+
+	@media(min-width: 1024px) {
+		font-size: 42px;
+		margin-bottom: 30px;
+	}
+}
+
+.collection__text {
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 14px;
+	text-align: center;
+	color: $text-grey;
+	margin-bottom: 35px;
+
+	@media(min-width: 1024px) {
+		font-size: 18px;
+		margin-bottom: 83px;
+	}
+}
+
+.collection__button {
+	margin: 0 auto;
+	display: flex;
+	width: 100%;
+	max-width: 500px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	background-color: $brown;
+	transition: 1.2s;
+
+	@media(min-width: 1024px) {
+		span {
+			font-size: 16px;
+		}
+	}
+
+	span {
+		font-family: Manrope;
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: $background-soft;
+
+		&::after {
+			content: " /";
+			transition: 0.5s;
+		}
+
+		&::before {
+			content: "/ ";
+			transition: 0.5s;
+		}
+	}
+
+	&:hover {
+		box-shadow: 0 0 6px 0px $brown;
+
+		span {
+			&::after {
+				margin-left: 15px;
+			}
+
+			&::before {
+				margin-right: 15px;
+			}
+		}
+	}
+}
+
+.collection__itm {
+	width: 0;
+	max-width: 290px;
+	height: 2px;
+	background-color: $background-white;
+	margin: 0 auto;
+	transition: 1s;
+
+	@media(min-width: 1024px) {
+		max-width: 600px;
+	}
+
+	&.animated {
+		width: 290px;
+
+		@media(min-width: 1024px) {
+			width: 600px;
+		}
+	}
+}
