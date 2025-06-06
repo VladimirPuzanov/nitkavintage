@@ -1,0 +1,24 @@
+.lost{
+	margin-bottom: 75px;
+	@media(min-width: 1024px){
+		margin-bottom: 240px;
+	}
+}
+
+.lost__container{
+	padding: 0 15px;
+	@media(min-width: 1024px){
+		padding: 0 40px;
+	}
+}
+
+.lost__title{
+	transition: 0.8s;
+	font-size: 42px;
+	margin-bottom: 40px;
+	@media(min-width: 1360px){
+		font-size: 102px;
+		margin-bottom: 80px;
+	}
+}
+

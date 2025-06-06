@@ -1,0 +1,146 @@
+.catalog-block {
+	margin-bottom: 75px;
+	padding-top: 20px;
+	padding-bottom: 155px;
+	position: relative;
+	background-image: url("../img/catalog/Ellipse.svg");
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	overflow: hidden;
+
+	@media(min-width: 1024px) {
+		padding-top: 40px;
+	}
+
+	&__photo {
+		position: absolute;
+		width: 371px;
+		height: 435px;
+		transition: 1s;
+
+		@media(max-width: 1280px) {
+			display: none;
+		}
+
+		&_1 {
+			&.animated {
+				@media(max-width: 1475px) {
+					left: 10px
+				}
+
+				left: 100px;
+				top: 75px;
+				transform: rotate(-17deg);
+			}
+		}
+
+		&_2 {
+			&.animated {
+				@media(max-width: 1475px) {
+					right: 20px;
+				}
+
+				bottom: 65px;
+				right: 130px;
+				transform: rotate(14deg);
+			}
+		}
+	}
+}
+
+.catalog-block__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.catalog-block__title {
+	font-family: Manrope;
+	font-weight: 500;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: $brown;
+	margin-bottom: 35px;
+	transition: 1s;
+
+	@media(min-width: 1024px) {
+		padding-top: 16px;
+		margin-bottom: 95px;
+	}
+
+	&::before {
+		content: "/";
+		display: inline-block;
+	}
+
+	&::after {
+		content: "/";
+		display: inline-block;
+	}
+}
+
+.catalog-block__list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+
+	@media(min-width: 1024px) {
+		gap: 20px;
+	}
+}
+
+.catalog-block__link {
+	color: $text-grey;
+	display: block;
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 42px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 1s;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 0px;
+		height: 2px;
+		display: block;
+		background-color: $brown;
+		transition: 0.6s;
+	}
+
+	@media(min-width: 1024px) {
+		font-size: 102px;
+	}
+
+	@media(hover : hover) {
+		&:hover {
+			color: $brown;
+
+			&::after {
+				width: 100%;
+				transition: 0.6s;
+			}
+		}
+	}
+
+	&_vintage {
+		font-family: Playfair Display;
+		color: $brown;
+
+		@media(hover : hover) {
+			&:hover {
+				color: $text-grey;
+
+				&::after {
+					width: 100%;
+					transition: 0.6s;
+					color: $text-grey;
+				}
+			}
+		}
+	}
+}

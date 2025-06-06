@@ -47,6 +47,10 @@ body {
 
 .container {
 	padding: 0 15px;
+	width: 100%;
+	@media(max-width: 350px){
+		padding: 0 5px;
+	}
 }
 
 .section-title {
@@ -65,4 +69,8 @@ body {
 @import 'vendor/header';
 @import 'vendor/intro_main';
 @import 'vendor/collection';
+@import 'vendor/lost';
 @import 'vendor/footer';
+@import 'vendor/catalog-block';
+@import 'vendor/social';
+@import 'vendor/catalog';

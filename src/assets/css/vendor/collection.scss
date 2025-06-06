@@ -3,6 +3,10 @@
 	@media(min-width: 1024px){
 		margin-bottom: 240px;
 	}
+
+	.typed-cursor{
+		display: none;
+	}
 }
 
 .container_collection{
@@ -23,7 +27,7 @@
 
 .collection__content {
 	mask-image: url("../img/collection/collection-mask.svg");
-	mask-size: 100% auto;
+	mask-size: auto 100%;
 	mask-position: 50% 0%;
 	background-color: $background-white;
 	padding: 10px;
@@ -37,6 +41,7 @@
 	@media(min-width: 1024px) {
 		max-width: 600px;
 		padding-top: 390px;
+		mask-size: 100% auto;
 	}
 }
 
@@ -62,6 +67,7 @@
 	text-align: center;
 	color: $text-grey;
 	margin-bottom: 35px;
+	transition: 1s;
 
 	@media(min-width: 1024px) {
 		font-size: 18px;
@@ -135,6 +141,7 @@
 
 	&.animated {
 		width: 290px;
+		max-width: 100%;
 
 		@media(min-width: 1024px) {
 			width: 600px;

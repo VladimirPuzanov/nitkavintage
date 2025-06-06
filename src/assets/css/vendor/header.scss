@@ -117,12 +117,13 @@
 		text-transform: uppercase;
 		color: $text-grey;
 		position: relative;
+		transition: 0.6s;
 
 		@media(hover : hover) {
 			&::after {
 				content: "";
 				display: block;
-				background-color: $text-grey;
+				background-color: $brown;
 				width: 0;
 				height: 1px;
 				position: absolute;
@@ -130,6 +131,7 @@
 			}
 
 			&:hover {
+				color: $brown;
 				&::after {
 					width: 100%;
 				}
