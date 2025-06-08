@@ -5,6 +5,7 @@ $background-white: #FFFBF5;
 $white: #FFF;
 $main: #80684A;
 $brown: #80684A;
+$grey : #F4EBE2;
 
 @import 'vendor/font';
 @import 'vendor/_normalize';
@@ -48,6 +49,8 @@ body {
 .container {
 	padding: 0 15px;
 	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
 	@media(max-width: 350px){
 		padding: 0 5px;
 	}
@@ -70,7 +73,8 @@ body {
 @import 'vendor/intro_main';
 @import 'vendor/collection';
 @import 'vendor/lost';
-@import 'vendor/footer';
 @import 'vendor/catalog-block';
 @import 'vendor/social';
 @import 'vendor/catalog';
+@import 'vendor/about';
+@import 'vendor/footer';

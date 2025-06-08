@@ -1,0 +1,44 @@
+.about{
+	margin-bottom: 60px;
+	padding: 250px 30px 30px; 
+	position: relative;
+	overflow: hidden;
+
+	&__inner{
+		background-color: $background-soft;
+		width: 100%;
+		max-width: 290px;
+		margin: 0 auto;
+		padding: 10px 20px;
+		padding-top: 155px;
+		mask-image: url("../img/about/about-mask.svg");
+		mask-size: 100%;
+		mask-position: 50% 0;
+	}
+
+	&__title{
+		font-size: 22px;
+		margin-bottom: 15px;
+	}
+
+	&__background{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		mask-image: url("../img/about/about-background-mask.svg");
+		mask-size: 100%;
+		mask-position: 50% 100%;
+		z-index: -1;
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 0;
+			mask-image: url("../img/about/about-background-mask.svg");
+			mask-size: 100% auto;
+			mask-position: 50% 0;
+		}
+	}
+}
