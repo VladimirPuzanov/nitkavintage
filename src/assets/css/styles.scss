@@ -13,23 +13,30 @@ $grey : #F4EBE2;
 @import 'vendor/animations';
 
 html {
+	&::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.6s;
+		pointer-events: none;
+		z-index: 3;
+	}
+
 	&.lock {
+		&::before {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+		}
+
 		max-height: 100vh;
 		overflow: hidden;
-
-		&::after {
-			top: 0;
-			height: 0;
-			content: "";
-			width: 100%;
-			height: 100%;
-			position: fixed;
-			display: block;
-			z-index: 3;
-			opacity: 1;
-			background-color: #00000080;
-			animation: darkness 0.5s linear;
-		}
 	}
 }
 
@@ -37,22 +44,13 @@ body {
 	background-color: #FFF9F3;
 }
 
-@keyframes darkness {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
 .container {
 	padding: 0 15px;
 	width: 100%;
 	max-width: 1920px;
 	margin: 0 auto;
-	@media(max-width: 350px){
+
+	@media(max-width: 350px) {
 		padding: 0 5px;
 	}
 }
@@ -79,3 +77,58 @@ body {
 @import 'vendor/catalog';
 @import 'vendor/about';
 @import 'vendor/footer';
+
+.cursor {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.2s;
+	pointer-events: none;
+}
+
+.cursor__move {
+	will-change: transform;
+	transform-style: preserve-3d;
+	transition: transform 1.5s cubic-bezier(0.23, 1.15, 0.61, 0.98);
+}
+
+.cursor__wrap {
+	display: flex;
+	padding: 0.4rem 0.6rem;
+	align-items: center;
+	grid-column-gap: 0.6rem;
+	border-radius: 1.25rem;
+	background-color: rgba(51, 51, 51, 0.5);
+	opacity: 0;
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	transform: scale(0);
+	transition: transform 0.4s, opacity 0.25s;
+}
+
+.cursor__circle {
+	width: 0.6rem;
+	height: 0.6rem;
+	border-radius: 100%;
+	background-color: #f8fbfc;
+}
+
+.cursor__text {
+	color: #f8fbfc;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+	.cursor {
+		display: none;
+	}
+}
