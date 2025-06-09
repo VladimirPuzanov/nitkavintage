@@ -14,7 +14,7 @@
 
 		&-wrapper {
 			flex-basis: 100%;
-					transition: 1s;
+			transition: 1s;
 		}
 
 		@media(min-width: 1024px) {
@@ -48,6 +48,24 @@
 		flex-basis: calc(33% - 50px);
 		transition: 1s;
 
+		@media(hover : hover) {
+			&:hover {
+				.social__name {
+					color: $brown;
+				}
+
+				.social__text{
+					&::after{
+						margin-left: 10px;
+					}
+
+					&::before{
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+
 		&_telegram {
 			opacity: 0;
 			transform: translateX(-50px);
@@ -63,6 +81,12 @@
 
 				@media(min-width: 1024px) {
 					transform: rotate(1deg);
+				}
+
+				@media(hover : hover) {
+					&:hover {
+						transform: rotate(-1deg)
+					}
 				}
 			}
 		}
@@ -81,6 +105,11 @@
 
 				@media(min-width: 1024px) {
 					transform: rotate(-1deg);
+					@media(hover : hover) {
+					&:hover {
+						transform: rotate(1deg)
+					}
+				}
 				}
 			}
 		}
@@ -123,6 +152,7 @@
 		text-align: center;
 		text-transform: uppercase;
 		color: $text-grey;
+		transition: 1s;
 
 		@media(min-width: 1024px) {
 			margin-bottom: 10px;

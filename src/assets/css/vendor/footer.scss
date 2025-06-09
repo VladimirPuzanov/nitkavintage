@@ -89,12 +89,13 @@
 		font-size: 18px;
 		position: relative;
 		text-transform: uppercase;
+		transition: 0.6s;
 
 		@media(hover : hover) {
 			&::after {
 				content: "";
 				display: block;
-				background-color: $text-grey;
+				background-color: $brown;
 				width: 0;
 				height: 1px;
 				position: absolute;
@@ -102,6 +103,7 @@
 			}
 
 			&:hover {
+				color: $brown;
 				&::after {
 					width: 100%;
 				}
@@ -171,10 +173,11 @@
 		a {
 			position: relative;
 			@media(hover : hover) {
+				transition: 0.6s;
 				&::after {
 					content: "";
 					display: block;
-					background-color: $text-grey;
+					background-color: $brown;
 					width: 0;
 					height: 1px;
 					position: absolute;
@@ -182,6 +185,7 @@
 				}
 
 				&:hover {
+					color: $brown;
 					&::after {
 						width: 100%;
 					}

@@ -724,7 +724,29 @@ body {
     font-weight: 500;
     font-size: 16px;
     text-transform: uppercase;
-    position: relative;
+  }
+}
+@media (min-width: 1024px) and (hover: hover) {
+  .header__button p .header__button-text::after {
+    content: "";
+    display: block;
+    background-color: #80684A;
+    width: 0;
+    left: -2px;
+    height: 1px;
+    bottom: -3px;
+    position: absolute;
+    transition: 0.6s;
+  }
+  .header__button p:hover {
+    color: #80684A;
+  }
+  .header__button p:hover .header__button-text::after {
+    width: 100%;
+  }
+  .header__button p:hover .header__button-count {
+    opacity: 1;
+    color: #333333;
   }
 }
 @media (min-width: 1024px) and (max-width: 1130px) {
@@ -732,24 +754,11 @@ body {
     font-size: 14px;
   }
 }
-@media (min-width: 1024px) and (hover: hover) {
-  .header__button p::after {
-    content: "";
-    display: block;
-    background-color: #333333;
-    width: 0;
-    height: 1px;
-    bottom: -3px;
-    position: absolute;
-    transition: 0.6s;
-  }
-  .header__button p:hover::after {
-    width: 100%;
-  }
-}
 @media (min-width: 1024px) {
   .header__button .header__button-text {
     display: inline;
+    position: relative;
+    transition: 0.6s;
   }
   .header__button .header__button-count {
     position: static;
@@ -763,6 +772,7 @@ body {
     font-family: Manrope;
     font-weight: 500;
     font-size: 16px;
+    transition: 0.6s;
     text-transform: uppercase;
   }
   .header__button .header__button-count::after {
@@ -924,6 +934,7 @@ body {
   transition: 0.5s;
 }
 .intro__button:hover {
+  background-color: #805926;
   box-shadow: 0 0 6px 0px #80684A;
 }
 .intro__button:hover span::after {
@@ -1052,6 +1063,7 @@ body {
   transition: 0.5s;
 }
 .collection__button:hover {
+  background-color: #805926;
   box-shadow: 0 0 6px 0px #80684A;
 }
 .collection__button:hover span::after {
@@ -1305,6 +1317,17 @@ body {
   flex-basis: calc(33% - 50px);
   transition: 1s;
 }
+@media (hover: hover) {
+  .social__link:hover .social__name {
+    color: #80684A;
+  }
+  .social__link:hover .social__text::after {
+    margin-left: 10px;
+  }
+  .social__link:hover .social__text::before {
+    margin-right: 10px;
+  }
+}
 .social__link_telegram {
   opacity: 0;
   transform: translateX(-50px);
@@ -1323,6 +1346,11 @@ body {
     transform: rotate(1deg);
   }
 }
+@media (hover: hover) {
+  .social__link_telegram.animated:hover {
+    transform: rotate(-1deg);
+  }
+}
 .social__link_inst {
   opacity: 0;
   transform: translateX(50px);
@@ -1339,6 +1367,11 @@ body {
 @media (min-width: 1024px) {
   .social__link_inst.animated {
     transform: rotate(-1deg);
+  }
+}
+@media (min-width: 1024px) and (hover: hover) {
+  .social__link_inst.animated:hover {
+    transform: rotate(1deg);
   }
 }
 @media (min-width: 1024px) {
@@ -1379,6 +1412,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #333333;
+  transition: 1s;
 }
 @media (min-width: 1024px) {
   .social__name {
@@ -1460,6 +1494,12 @@ body {
   .product__card:hover {
     scale: 1.05;
   }
+  .product__card:hover .product__name {
+    color: #80684A;
+  }
+  .product__card:hover .product__price {
+    color: #80684A;
+  }
 }
 
 .product__photo {
@@ -1534,6 +1574,14 @@ body {
   position: relative;
   overflow: hidden;
 }
+@media (min-width: 1024px) {
+  .about {
+    padding-top: 690px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 48px;
+  }
+}
 .about__inner {
   background-color: #FFF9F3;
   width: 100%;
@@ -1543,14 +1591,31 @@ body {
   padding-top: 155px;
   -webkit-mask-image: url("../img/about/about-mask.svg");
   mask-image: url("../img/about/about-mask.svg");
-  -webkit-mask-size: 100%;
-  mask-size: 100%;
+  -webkit-mask-size: 100% auto;
+  mask-size: 100% auto;
   -webkit-mask-position: 50% 0;
   mask-position: 50% 0;
+  margin-bottom: 2px;
+  transition: 1s;
+}
+@media (min-width: 1024px) {
+  .about__inner {
+    padding-top: 330px;
+    max-width: 600px;
+    margin-left: 0;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+  }
 }
 .about__title {
   font-size: 22px;
   margin-bottom: 15px;
+}
+@media (min-width: 1600px) {
+  .about__title {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
 }
 .about__background {
   position: absolute;
@@ -1560,11 +1625,12 @@ body {
   width: 100%;
   -webkit-mask-image: url("../img/about/about-background-mask.svg");
   mask-image: url("../img/about/about-background-mask.svg");
-  -webkit-mask-size: 100%;
-  mask-size: 100%;
+  -webkit-mask-size: auto 150%;
+  mask-size: auto 150%;
   -webkit-mask-position: 50% 100%;
   mask-position: 50% 100%;
   z-index: -1;
+  transition: 1s;
 }
 .about__background img {
   width: 100%;
@@ -1575,10 +1641,130 @@ body {
   object-position: 50% 0;
   -webkit-mask-image: url("../img/about/about-background-mask.svg");
   mask-image: url("../img/about/about-background-mask.svg");
-  -webkit-mask-size: 100% auto;
-  mask-size: 100% auto;
+  -webkit-mask-size: auto 150%;
+  mask-size: auto 150%;
   -webkit-mask-position: 50% 0;
   mask-position: 50% 0;
+}
+@media (min-width: 1024px) {
+  .about__background img {
+    -webkit-mask-size: 175%;
+    mask-size: 175%;
+    -webkit-mask-position: 100% 100%;
+    mask-position: 100% 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .about__background {
+    -webkit-mask-size: 175%;
+    mask-size: 175%;
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+.about__text {
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333333;
+}
+@media (min-width: 1024px) {
+  .about__text {
+    max-width: 470px;
+    font-size: 18px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+}
+.about__time {
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 35px;
+  color: #333333;
+}
+@media (min-width: 1024px) {
+  .about__time {
+    font-size: 18px;
+    margin-bottom: 80px;
+    max-width: 470px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+}
+.about__button {
+  display: block;
+  padding: 14px;
+  background-color: #80684A;
+  text-align: center;
+  transition: 0.6s;
+}
+.about__button span {
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFF9F3;
+}
+@media (min-width: 1024px) {
+  .about__button span {
+    font-size: 16px;
+  }
+}
+.about__button span::after {
+  content: "/";
+  display: inline-block;
+  transition: 0.6s;
+}
+.about__button span::before {
+  content: "/";
+  display: inline-block;
+  transition: 0.6s;
+}
+@media (hover: hover) {
+  .about__button:hover {
+    background-color: #805926;
+  }
+  .about__button:hover span::after {
+    padding-left: 10px;
+    transition: 0.6s;
+  }
+  .about__button:hover span::before {
+    padding-right: 10px;
+    transition: 0.6s;
+  }
+}
+@media (min-width: 1024px) {
+  .about__button {
+    padding: 24px;
+  }
+}
+.about__item {
+  transition: 1s;
+  height: 2px;
+  background-color: #FFF9F3;
+  margin: 0 auto;
+}
+.about__item.to_animate {
+  width: 0;
+}
+.about__item.animated {
+  width: 290px;
+}
+@media (min-width: 1024px) {
+  .about__item.animated {
+    width: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  .about__item {
+    max-width: 600px;
+    margin-left: 0;
+  }
 }
 
 .footer__logo {
@@ -1665,16 +1851,20 @@ body {
   font-size: 18px;
   position: relative;
   text-transform: uppercase;
+  transition: 0.6s;
 }
 @media (hover: hover) {
   .footer__links a::after {
     content: "";
     display: block;
-    background-color: #333333;
+    background-color: #80684A;
     width: 0;
     height: 1px;
     position: absolute;
     transition: 0.6s;
+  }
+  .footer__links a:hover {
+    color: #80684A;
   }
   .footer__links a:hover::after {
     width: 100%;
@@ -1741,14 +1931,20 @@ body {
   }
 }
 @media (min-width: 1024px) and (hover: hover) {
+  .footer__info a {
+    transition: 0.6s;
+  }
   .footer__info a::after {
     content: "";
     display: block;
-    background-color: #333333;
+    background-color: #80684A;
     width: 0;
     height: 1px;
     position: absolute;
     transition: 0.6s;
+  }
+  .footer__info a:hover {
+    color: #80684A;
   }
   .footer__info a:hover::after {
     width: 100%;

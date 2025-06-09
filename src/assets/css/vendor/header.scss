@@ -132,6 +132,7 @@
 
 			&:hover {
 				color: $brown;
+
 				&::after {
 					width: 100%;
 				}
@@ -307,18 +308,13 @@
 			font-size: 16px;
 			text-transform: uppercase;
 
-			@media(max-width: 1130px) {
-				font-size: 14px;
-			}
-
-			position:relative;
-
 			@media(hover : hover) {
-				&::after {
+				.header__button-text::after {
 					content: "";
 					display: block;
-					background-color: $text-grey;
+					background-color: $brown;
 					width: 0;
+					left: -2px;
 					height: 1px;
 					bottom: -3px;
 					position: absolute;
@@ -326,15 +322,28 @@
 				}
 
 				&:hover {
-					&::after {
+					color: $brown;
+
+					.header__button-text::after {
 						width: 100%;
 					}
+
+					.header__button-count{
+						opacity: 1;
+						color: $text-grey;
+					}
 				}
+			}
+
+			@media(max-width: 1130px) {
+				font-size: 14px;
 			}
 		}
 
 		.header__button-text {
 			display: inline;
+			position: relative;
+			transition: 0.6s;
 		}
 
 		.header__button-count {
@@ -349,6 +358,7 @@
 			font-family: Manrope;
 			font-weight: 500;
 			font-size: 16px;
+			transition: 0.6s;
 			text-transform: uppercase;
 
 			&::after {
