@@ -23,8 +23,8 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.3,
-  rootMargin: '150px',
+  threshold: 0.4,
+  rootMargin: '50px',
 });
 
 const animatedItems = document.querySelectorAll(".to_animate")

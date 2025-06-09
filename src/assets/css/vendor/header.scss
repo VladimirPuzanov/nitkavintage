@@ -31,7 +31,7 @@
 		width: 100%;
 		height: auto;
 		transform: scale(1.1);
-		transition: 3s;
+		transition: transform 3s;
 
 		path {
 			stroke-dasharray: 250;
@@ -53,7 +53,7 @@
 	align-items: center;
 	gap: 10px;
 	transform: translate(50px);
-	transition: 1s;
+	transition: transform 1s;
 
 	&.animated {
 		gap: 20px;
@@ -76,7 +76,7 @@
 		position: absolute;
 		left: 11px;
 		top: 16px;
-		transition: 0.5s;
+		transition: left 0.5s, top 0.5s, transform 0.5s;
 	}
 
 	&::before {
@@ -88,7 +88,7 @@
 		position: absolute;
 		left: 11px;
 		top: 21px;
-		transition: 0.5s;
+		transition: left 0.5s, top 0.5s, transform 0.5s;
 	}
 }
 
@@ -99,7 +99,7 @@
 	right: 100%;
 	background-color: #F4EBE2;
 	width: 100%;
-	transition: 0.5s;
+	transition: right 0.5s;
 
 	>ul {
 		padding: 40px 0 32px;
@@ -117,7 +117,7 @@
 		text-transform: uppercase;
 		color: $text-grey;
 		position: relative;
-		transition: 0.6s;
+		transition: color 0.6s;
 
 		@media(hover : hover) {
 			&::after {
@@ -127,7 +127,7 @@
 				width: 0;
 				height: 1px;
 				position: absolute;
-				transition: 0.6s;
+				transition: width 0.6s;
 			}
 
 			&:hover {
@@ -211,7 +211,7 @@
 		padding: 0;
 		background-color: $background-soft;
 		transform: translateX(-100px);
-		transition: 1s;
+		transition: transform 1s;
 
 		>ul {
 			padding: 0;
@@ -220,7 +220,7 @@
 			gap: 0;
 
 			li:not(:last-child)::after {
-				transition: 1s;
+				transition: padding 1s;
 				content: "/";
 				padding: 0 5px;
 				color: $main;
@@ -289,7 +289,7 @@
 		transform: translateX(50px);
 		gap: 10px;
 		justify-content: flex-end;
-		transition: 1s;
+		transition: gap 1s, transform 1s;
 
 		&.animated {
 			transform: translateX(0);
@@ -318,7 +318,7 @@
 					height: 1px;
 					bottom: -3px;
 					position: absolute;
-					transition: 0.6s;
+					transition: width 0.6s;
 				}
 
 				&:hover {
@@ -343,7 +343,7 @@
 		.header__button-text {
 			display: inline;
 			position: relative;
-			transition: 0.6s;
+			transition: color 0.6s;
 		}
 
 		.header__button-count {
@@ -358,7 +358,7 @@
 			font-family: Manrope;
 			font-weight: 500;
 			font-size: 16px;
-			transition: 0.6s;
+			transition: opacity 0.6s;
 			text-transform: uppercase;
 
 			&::after {

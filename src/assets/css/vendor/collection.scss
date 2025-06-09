@@ -36,7 +36,7 @@
 	max-width: 290px;
 	margin: 0 auto;
 	margin-bottom: 2px;
-	transition: 1s;
+	transition: transform 1s, opacity 1s;
 
 	@media(min-width: 1024px) {
 		max-width: 600px;
@@ -67,7 +67,6 @@
 	text-align: center;
 	color: $text-grey;
 	margin-bottom: 35px;
-	transition: 1s;
 
 	@media(min-width: 1024px) {
 		font-size: 18px;
@@ -84,7 +83,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: $brown;
-	transition: 1.2s;
+	transition: background-color 1.2s, box-shadow 1.2s;
 
 	@media(min-width: 1024px) {
 		span {
@@ -103,12 +102,12 @@
 
 		&::after {
 			content: " /";
-			transition: 0.5s;
+			transition: margin 0.5s;
 		}
 
 		&::before {
 			content: "/ ";
-			transition: 0.5s;
+			transition: margin 0.5s;
 		}
 	}
 
@@ -134,7 +133,7 @@
 	height: 2px;
 	background-color: $background-white;
 	margin: 0 auto;
-	transition: 1s;
+	transition: width 1s;
 
 	@media(min-width: 1024px) {
 		max-width: 600px;

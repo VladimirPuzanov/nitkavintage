@@ -71,7 +71,7 @@
 	display: none;
 	@media(min-width: 1024px){
 		display: block;
-		transition: 1s;
+		transition: transform 1s, opacity 1s;
 		width: 205px;
 		margin-top: auto;
 		margin-bottom: 40px;
@@ -90,7 +90,7 @@
 	color: $text-grey;
 	margin: 0 auto;
 	margin-bottom: 40px;
-	transition: 1s;
+	transition: transform 1s, opacity 1s;
 
 	@media(min-width: 1024px) {
 		font-size: 48px;
@@ -113,7 +113,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: $brown;
-	transition: 1.2s;
+	transition: background-color 1.2s, box-shadow 1.2s;
 	@media(min-width: 1024px){
 		margin-top: auto;
 		max-width: 1024px;

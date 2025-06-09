@@ -399,7 +399,7 @@ html::before {
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transition: 0.6s;
+  transition: opacity 0.6s, visibility 0.6s;
   pointer-events: none;
   z-index: 3;
 }
@@ -471,7 +471,7 @@ body {
   width: 100%;
   height: auto;
   transform: scale(1.1);
-  transition: 3s;
+  transition: transform 3s;
 }
 .header__logo-wrapper svg path {
   stroke-dasharray: 250;
@@ -488,7 +488,7 @@ body {
   align-items: center;
   gap: 10px;
   transform: translate(50px);
-  transition: 1s;
+  transition: transform 1s;
 }
 .header__buttons.animated {
   gap: 20px;
@@ -510,7 +510,7 @@ body {
   position: absolute;
   left: 11px;
   top: 16px;
-  transition: 0.5s;
+  transition: left 0.5s, top 0.5s, transform 0.5s;
 }
 .header__burger::before {
   content: "";
@@ -521,7 +521,7 @@ body {
   position: absolute;
   left: 11px;
   top: 21px;
-  transition: 0.5s;
+  transition: left 0.5s, top 0.5s, transform 0.5s;
 }
 
 .header__navigation {
@@ -531,7 +531,7 @@ body {
   right: 100%;
   background-color: #F4EBE2;
   width: 100%;
-  transition: 0.5s;
+  transition: right 0.5s;
 }
 .header__navigation > ul {
   padding: 40px 0 32px;
@@ -548,7 +548,7 @@ body {
   text-transform: uppercase;
   color: #333333;
   position: relative;
-  transition: 0.6s;
+  transition: color 0.6s;
 }
 @media (hover: hover) {
   .header__navigation a::after {
@@ -558,7 +558,7 @@ body {
     width: 0;
     height: 1px;
     position: absolute;
-    transition: 0.6s;
+    transition: width 0.6s;
   }
   .header__navigation a:hover {
     color: #80684A;
@@ -631,7 +631,7 @@ body {
     padding: 0;
     background-color: #FFF9F3;
     transform: translateX(-100px);
-    transition: 1s;
+    transition: transform 1s;
   }
   .header__navigation > ul {
     padding: 0;
@@ -640,7 +640,7 @@ body {
     gap: 0;
   }
   .header__navigation > ul li:not(:last-child)::after {
-    transition: 1s;
+    transition: padding 1s;
     content: "/";
     padding: 0 5px;
     color: #80684A;
@@ -708,7 +708,7 @@ body {
     transform: translateX(50px);
     gap: 10px;
     justify-content: flex-end;
-    transition: 1s;
+    transition: gap 1s, transform 1s;
   }
   .header__buttons.animated {
     transform: translateX(0);
@@ -734,7 +734,7 @@ body {
     height: 1px;
     bottom: -3px;
     position: absolute;
-    transition: 0.6s;
+    transition: width 0.6s;
   }
   .header__button p:hover {
     color: #80684A;
@@ -756,7 +756,7 @@ body {
   .header__button .header__button-text {
     display: inline;
     position: relative;
-    transition: 0.6s;
+    transition: color 0.6s;
   }
   .header__button .header__button-count {
     position: static;
@@ -770,7 +770,7 @@ body {
     font-family: Manrope;
     font-weight: 500;
     font-size: 16px;
-    transition: 0.6s;
+    transition: opacity 0.6s;
     text-transform: uppercase;
   }
   .header__button .header__button-count::after {
@@ -862,7 +862,7 @@ body {
 @media (min-width: 1024px) {
   .intro__image-border {
     display: block;
-    transition: 1s;
+    transition: transform 1s, opacity 1s;
     width: 205px;
     margin-top: auto;
     margin-bottom: 40px;
@@ -880,7 +880,7 @@ body {
   color: #333333;
   margin: 0 auto;
   margin-bottom: 40px;
-  transition: 1s;
+  transition: transform 1s, opacity 1s;
 }
 @media (min-width: 1024px) {
   .intro__title {
@@ -903,7 +903,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #80684A;
-  transition: 1.2s;
+  transition: background-color 1.2s, box-shadow 1.2s;
 }
 @media (min-width: 1024px) {
   .intro__button {
@@ -985,7 +985,7 @@ body {
   max-width: 290px;
   margin: 0 auto;
   margin-bottom: 2px;
-  transition: 1s;
+  transition: transform 1s, opacity 1s;
 }
 @media (min-width: 1024px) {
   .collection__content {
@@ -1018,7 +1018,6 @@ body {
   text-align: center;
   color: #333333;
   margin-bottom: 35px;
-  transition: 1s;
 }
 @media (min-width: 1024px) {
   .collection__text {
@@ -1036,7 +1035,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #80684A;
-  transition: 1.2s;
+  transition: background-color 1.2s, box-shadow 1.2s;
 }
 @media (min-width: 1024px) {
   .collection__button span {
@@ -1054,11 +1053,11 @@ body {
 }
 .collection__button span::after {
   content: " /";
-  transition: 0.5s;
+  transition: margin 0.5s;
 }
 .collection__button span::before {
   content: "/ ";
-  transition: 0.5s;
+  transition: margin 0.5s;
 }
 .collection__button:hover {
   background-color: #805926;
@@ -1077,7 +1076,7 @@ body {
   height: 2px;
   background-color: #FFFBF5;
   margin: 0 auto;
-  transition: 1s;
+  transition: width 1s;
 }
 @media (min-width: 1024px) {
   .collection__itm {
@@ -1146,7 +1145,7 @@ body {
   width: 371px;
   height: 435px;
   opacity: 0;
-  transition: 1s;
+  transition: transform 1s, opacity 1s;
 }
 @media (max-width: 1280px) {
   .catalog-block__photo {
@@ -1189,7 +1188,7 @@ body {
   text-transform: uppercase;
   color: #80684A;
   margin-bottom: 35px;
-  transition: 1s;
+  transition: opacity 1s, transform 1s;
 }
 @media (min-width: 1024px) {
   .catalog-block__title {
@@ -1226,7 +1225,7 @@ body {
   font-size: 42px;
   text-align: center;
   text-transform: uppercase;
-  transition: 1s;
+  transition: opacity 1s, transform 1s, color 0.6s;
   position: relative;
 }
 .catalog-block__link::after {
@@ -1236,7 +1235,7 @@ body {
   height: 2px;
   display: block;
   background-color: #80684A;
-  transition: 0.6s;
+  transition: width 0.6s;
 }
 @media (min-width: 1024px) {
   .catalog-block__link {
@@ -1249,7 +1248,7 @@ body {
   }
   .catalog-block__link:hover::after {
     width: 100%;
-    transition: 0.6s;
+    transition: width 0.6s;
   }
 }
 .catalog-block__link_vintage {
@@ -1262,7 +1261,7 @@ body {
   }
   .catalog-block__link_vintage:hover::after {
     width: 100%;
-    transition: 0.6s;
+    transition: width 0.6s;
     color: #333333;
   }
 }
@@ -1484,7 +1483,7 @@ body {
   position: relative;
   max-width: 540px;
   width: 100%;
-  transition: 0.6s;
+  transition: transform 0.6s, scale 1s;
 }
 @media (min-width: 1024px) {
   .product__card {
@@ -1528,7 +1527,7 @@ body {
   text-transform: uppercase;
   color: #333333;
   margin-bottom: 10px;
-  transition: 1s;
+  transition: color 1s;
 }
 
 .product__price {
@@ -1537,7 +1536,7 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   color: #333333;
-  transition: 1s;
+  transition: color 1s;
   margin-bottom: auto;
 }
 
@@ -1552,19 +1551,19 @@ body {
   background-color: #FFF9F3;
 }
 .add-to-cart svg {
-  transition: 0.5s;
+  transition: background-color 0.5s;
 }
 .add-to-cart svg path {
   fill: #80684A;
-  transition: 0.5s;
+  transition: fill 0.5s;
 }
 @media (hover: hover) {
   .add-to-cart:hover {
-    transition: 0.5s;
+    transition: background-color 0.5s;
     background-color: #80684A;
   }
   .add-to-cart:hover svg path {
-    transition: 0.5s;
+    transition: fill 0.5s;
     fill: #FFF9F3;
   }
 }
@@ -1777,13 +1776,13 @@ body {
   height: auto;
   opacity: 0.1;
   transform: scale(1.1);
-  transition: 3s;
+  transition: transform 3s;
 }
 .footer__logo svg path {
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   fill: rgba(128, 104, 74, 0);
-  transition: 5s;
+  transition: fill 5s, stroke-dashoffset 5s;
 }
 .footer__logo.animated svg {
   transform: scale(1);
@@ -1813,7 +1812,7 @@ body {
   text-align: center;
   margin-bottom: 40px;
   transform: scale(1.1);
-  transition: 0.8s;
+  transition: transform 0.8s;
 }
 @media (min-width: 1024px) {
   .footer__links {
@@ -1821,7 +1820,7 @@ body {
     flex-direction: row;
     gap: 0;
     justify-content: center;
-    transition: 1s;
+    transition: opacity 1s, width 1s;
     opacity: 0;
     margin-bottom: 142px;
   }
@@ -1852,7 +1851,7 @@ body {
   font-size: 18px;
   position: relative;
   text-transform: uppercase;
-  transition: 0.6s;
+  transition: color 0.6s;
 }
 @media (hover: hover) {
   .footer__links a::after {
@@ -1862,7 +1861,7 @@ body {
     width: 0;
     height: 1px;
     position: absolute;
-    transition: 0.6s;
+    transition: width 0.6s, color 0.6s;
   }
   .footer__links a:hover {
     color: #80684A;
@@ -1873,7 +1872,7 @@ body {
 }
 .footer__links li {
   transform: rotate3d(1, 0, 0, 90deg);
-  transition: 0.8s;
+  transition: transform 0.8s;
 }
 .footer__links.animated {
   transform: scale(1);
@@ -1885,7 +1884,7 @@ body {
 .image {
   width: 153px;
   margin-bottom: 40px;
-  transition: 0.8s;
+  transition: transform 0.8s, opacity 0.8s;
   transform: scale(1.1);
   opacity: 0;
 }
@@ -1907,7 +1906,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  transition: 0.6s;
+  transition: transform 0.6s;
   transform: scale(0);
 }
 @media (min-width: 1024px) {
@@ -1933,7 +1932,7 @@ body {
 }
 @media (min-width: 1024px) and (hover: hover) {
   .footer__info a {
-    transition: 0.6s;
+    transition: color 0.6s;
   }
   .footer__info a::after {
     content: "";
@@ -1942,7 +1941,7 @@ body {
     width: 0;
     height: 1px;
     position: absolute;
-    transition: 0.6s;
+    transition: width 0.6s;
   }
   .footer__info a:hover {
     color: #80684A;
@@ -1968,59 +1967,4 @@ body {
 .footer__info.animated {
   transform: scale(1);
   transform: translateY(0);
-}
-
-.cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.2s;
-  pointer-events: none;
-}
-
-.cursor__move {
-  will-change: transform;
-  transform-style: preserve-3d;
-  transition: transform 1.5s cubic-bezier(0.23, 1.15, 0.61, 0.98);
-}
-
-.cursor__wrap {
-  display: flex;
-  padding: 0.4rem 0.6rem;
-  align-items: center;
-  grid-column-gap: 0.6rem;
-  border-radius: 1.25rem;
-  background-color: rgba(51, 51, 51, 0.5);
-  opacity: 0;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  transform: scale(0);
-  transition: transform 0.4s, opacity 0.25s;
-}
-
-.cursor__circle {
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 100%;
-  background-color: #f8fbfc;
-}
-
-.cursor__text {
-  color: #f8fbfc;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-@media (max-width: 1024px) {
-  .cursor {
-    display: none;
-  }
 }

@@ -164,21 +164,22 @@
 	}
 
 	&__item {
+		transition: 1s;
+		height: 2px;
+		background-color: $background-soft;
+		margin: 0 auto;
+
 		&.to_animate {
 			width: 0;
 		}
 
 		&.animated {
 			width: 290px;
+
 			@media(min-width: 1024px) {
 				width: 600px;
 			}
 		}
-
-		transition: 1s;
-		height: 2px;
-		background-color: $background-soft;
-		margin: 0 auto;
 
 		@media(min-width: 1024px) {
 			max-width: 600px;
