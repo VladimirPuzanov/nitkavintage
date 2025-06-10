@@ -13,7 +13,7 @@
 }
 
 .lost__title{
-	transition: 0.8s;
+	transition: tranform 0.8s, opacity 0.8s;
 	font-size: 42px;
 	margin-bottom: 40px;
 	@media(min-width: 1360px){

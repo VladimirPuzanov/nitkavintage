@@ -23,7 +23,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.4,
+  threshold: 0.3,
   rootMargin: '50px',
 });
 
@@ -58,8 +58,6 @@ const CursorFunction = () => {
     window.addEventListener('resize', updateWindowDimensions);
 
     projects.forEach((project) => {
-        const projectInner = project.querySelector(".cursor-item__inner");
-        if (!projectInner) return;
         
         const handleMouseMove = (e) => {
             if (window.innerWidth < 1024) return;
@@ -89,8 +87,8 @@ const CursorFunction = () => {
             cursorWrap.style.transform = "scale(0)";
         };
 
-        projectInner.addEventListener("mousemove", handleMouseMove);
-        projectInner.addEventListener("mouseleave", handleMouseLeave);
+        project.addEventListener("mousemove", handleMouseMove);
+        project.addEventListener("mouseleave", handleMouseLeave);
     });
 
     return () => {

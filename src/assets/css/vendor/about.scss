@@ -22,7 +22,7 @@
 		mask-size: 100% auto;
 		mask-position: 50% 0;
 		margin-bottom: 2px;
-		transition: 1s;
+		transition: opacity 1s, transform 1s;
 
 		@media(min-width: 1024px) {
 			padding-top: 330px;
@@ -52,7 +52,7 @@
 		mask-size: auto 150%;
 		mask-position: 50% 100%;
 		z-index: -1;
-		transition: 1s;
+		transition: transform 1s, opacity 1s;
 
 		img {
 			width: 100%;
@@ -113,7 +113,7 @@
 		padding: 14px;
 		background-color: $brown;
 		text-align: center;
-		transition: 0.6s;
+		transition: background-color 0.6s, box-shadow 0.6s;
 
 		span {
 			font-family: Manrope;
@@ -130,13 +130,13 @@
 			&::after {
 				content: "/";
 				display: inline-block;
-				transition: 0.6s;
+				transition: margin 0.6s;
 			}
 
 			&::before {
 				content: "/";
 				display: inline-block;
-				transition: 0.6s;
+				transition: padding 0.6s;
 			}
 		}
 
@@ -147,12 +147,12 @@
 				span {
 					&::after {
 						padding-left: 10px;
-						transition: 0.6s;
+						transition: padding 0.6s;
 					}
 
 					&::before {
 						padding-right: 10px;
-						transition: 0.6s;
+						transition: padding 0.6s;
 					}
 				}
 			}
@@ -164,7 +164,7 @@
 	}
 
 	&__item {
-		transition: 1s;
+		transition: width 1s;
 		height: 2px;
 		background-color: $background-soft;
 		margin: 0 auto;

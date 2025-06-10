@@ -14,7 +14,7 @@
 
 		&-wrapper {
 			flex-basis: 100%;
-			transition: 1s;
+			transition: opacity 1s, transform 1s;
 		}
 
 		@media(min-width: 1024px) {
@@ -46,7 +46,7 @@
 		max-width: 550px;
 		margin: 0 auto;
 		flex-basis: calc(33% - 50px);
-		transition: 1s;
+		transition: transform 1s, opacity 1s;
 
 		@media(hover : hover) {
 			&:hover {
@@ -141,7 +141,7 @@
 			width: auto;
 			flex-basis: calc(33% - 50px);
 			transform: rotate(1deg);
-			transition: 1s;
+			transition: transform 1s, opacity 1s;
 		}
 	}
 
@@ -152,7 +152,7 @@
 		text-align: center;
 		text-transform: uppercase;
 		color: $text-grey;
-		transition: 1s;
+		transition: color 1s;
 
 		@media(min-width: 1024px) {
 			margin-bottom: 10px;
@@ -172,13 +172,13 @@
 		&::before {
 			content: "/";
 			display: inline-block;
-			transition: 0.5s;
+			transition: margin 0.5s;
 		}
 
 		&::after {
 			content: "/";
 			display: inline-block;
-			transition: 0.5s;
+			transition: margin 0.5s;
 		}
 
 		@media(min-width: 1024px) {

@@ -929,7 +929,7 @@ body {
 }
 .intro__button span::before {
   content: "/ ";
-  transition: 0.5s;
+  transition: margin 0.5s;
 }
 .intro__button:hover {
   background-color: #805926;
@@ -1112,7 +1112,7 @@ body {
 }
 
 .lost__title {
-  transition: 0.8s;
+  transition: tranform 0.8s, opacity 0.8s;
   font-size: 42px;
   margin-bottom: 40px;
 }
@@ -1283,7 +1283,7 @@ body {
 }
 .social__title-wrapper {
   flex-basis: 100%;
-  transition: 1s;
+  transition: opacity 1s, transform 1s;
 }
 @media (min-width: 1024px) {
   .social__title {
@@ -1315,7 +1315,7 @@ body {
   max-width: 550px;
   margin: 0 auto;
   flex-basis: calc(33% - 50px);
-  transition: 1s;
+  transition: transform 1s, opacity 1s;
 }
 @media (hover: hover) {
   .social__link:hover .social__name {
@@ -1402,7 +1402,7 @@ body {
     width: auto;
     flex-basis: calc(33% - 50px);
     transform: rotate(1deg);
-    transition: 1s;
+    transition: transform 1s, opacity 1s;
   }
 }
 .social__name {
@@ -1412,7 +1412,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #333333;
-  transition: 1s;
+  transition: color 1s;
 }
 @media (min-width: 1024px) {
   .social__name {
@@ -1432,12 +1432,12 @@ body {
 .social__text::before {
   content: "/";
   display: inline-block;
-  transition: 0.5s;
+  transition: margin 0.5s;
 }
 .social__text::after {
   content: "/";
   display: inline-block;
-  transition: 0.5s;
+  transition: margin 0.5s;
 }
 @media (min-width: 1024px) {
   .social__text {
@@ -1596,7 +1596,7 @@ body {
   -webkit-mask-position: 50% 0;
   mask-position: 50% 0;
   margin-bottom: 2px;
-  transition: 1s;
+  transition: opacity 1s, transform 1s;
 }
 @media (min-width: 1024px) {
   .about__inner {
@@ -1630,7 +1630,7 @@ body {
   -webkit-mask-position: 50% 100%;
   mask-position: 50% 100%;
   z-index: -1;
-  transition: 1s;
+  transition: transform 1s, opacity 1s;
 }
 .about__background img {
   width: 100%;
@@ -1700,7 +1700,7 @@ body {
   padding: 14px;
   background-color: #80684A;
   text-align: center;
-  transition: 0.6s;
+  transition: background-color 0.6s, box-shadow 0.6s;
 }
 .about__button span {
   font-family: Manrope;
@@ -1718,12 +1718,12 @@ body {
 .about__button span::after {
   content: "/";
   display: inline-block;
-  transition: 0.6s;
+  transition: margin 0.6s;
 }
 .about__button span::before {
   content: "/";
   display: inline-block;
-  transition: 0.6s;
+  transition: padding 0.6s;
 }
 @media (hover: hover) {
   .about__button:hover {
@@ -1731,11 +1731,11 @@ body {
   }
   .about__button:hover span::after {
     padding-left: 10px;
-    transition: 0.6s;
+    transition: padding 0.6s;
   }
   .about__button:hover span::before {
     padding-right: 10px;
-    transition: 0.6s;
+    transition: padding 0.6s;
   }
 }
 @media (min-width: 1024px) {
@@ -1744,7 +1744,7 @@ body {
   }
 }
 .about__item {
-  transition: 1s;
+  transition: width 1s;
   height: 2px;
   background-color: #FFF9F3;
   margin: 0 auto;
@@ -1967,4 +1967,61 @@ body {
 .footer__info.animated {
   transform: scale(1);
   transform: translateY(0);
+}
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.cursor__move {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: transform 1.5s cubic-bezier(0.23, 1.15, 0.61, 0.98);
+}
+
+.cursor__wrap {
+  display: flex;
+  padding: 0.4rem 0.6rem;
+  align-items: center;
+  grid-column-gap: 0.6rem;
+  border-radius: 1.25rem;
+  background-color: rgba(51, 51, 51, 0.5);
+  opacity: 0;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transform: scale(0);
+  transition: transform 0.4s, opacity 0.25s;
+}
+
+.cursor__circle {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 100%;
+  background-color: #80684A;
+}
+
+.cursor__text {
+  color: #FFF9F3;
+  font-family: Playfair Display;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .cursor {
+    display: none;
+  }
 }
