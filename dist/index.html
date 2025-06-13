@@ -116,7 +116,7 @@
     			</svg>
     		</a>
     		<div class="header__buttons to_animate">
-    			<a href="#" class="header__button header__button_like">
+    			<button class="header__button header__button_cart">
     				<p>
     					<span class="header__button-text">
     						Корзина
@@ -124,7 +124,7 @@
     					<span class="header__button-count">0</span>
     				</p>
     				<img src="assets/img/header/pacage-icon.svg" alt="иконка корзины">
-    			</a>
+    			</button>
     			<button class="header__burger">
     			</button>
     		</div>
@@ -135,86 +135,134 @@
     				fill="#80684A" />
     		</svg>
     	</div>
-    	<div class="header__cart cart">
-    		<div class="cart__up">
-    			<p class="cart__title">
-    				Корзина<span class="cart__count">4</span>
-    			</p>
+    	<div class="header__cart">
+    		<div class="cart">
+    			<div class="cart__up">
+    				<p class="cart__title">
+    					Корзина<span class="cart__count">4</span>
+    				</p>
+    			</div>
+    			<div class="cart__down">
+    				<div class="cart__card">
+    					<picture class="cart__photo">
+    						<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
+    						<img src="assets/img/cart/product_photo.png" loading="lazy" alt="Фотография товара">
+    					</picture>
+    					<div class="cart__text-content">
+    						<a class="cart__text">
+    							Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
+    						</a>
+    						<span class="cart__price">
+    							7500 руб
+    						</span>
+    						<button class="cart__button">
+    							<span>Удалить</span>
+    							<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M1 1L5.00011 5.00011M5.00011 5.00011L9 9M5.00011 5.00011L1.00043 9M5.00011 5.00011L9 1"
+    									stroke="#80684A" />
+    							</svg>
+    						</button>
+    					</div>
+    				</div>
+    				<div class="cart__card">
+    					<picture class="cart__photo">
+    						<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
+    						<img src="assets/img/cart/product_photo.png" loading="lazy" alt="Фотография товара">
+    					</picture>
+    					<div class="cart__text-content">
+    						<a class="cart__text">
+    							Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
+    						</a>
+    						<span class="cart__price">
+    							7500 руб
+    						</span>
+    						<button class="cart__button">
+    							<span>Удалить</span>
+    							<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M1 1L5.00011 5.00011M5.00011 5.00011L9 9M5.00011 5.00011L1.00043 9M5.00011 5.00011L9 1"
+    									stroke="#80684A" />
+    							</svg>
+    						</button>
+    					</div>
+    				</div>
+    				<div class="cart__card">
+    					<picture class="cart__photo">
+    						<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
+    						<img src="assets/img/cart/product_photo.png" loading="lazy" alt="Фотография товара">
+    					</picture>
+    					<div class="cart__text-content">
+    						<a class="cart__text">
+    							Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
+    						</a>
+    						<span class="cart__price">
+    							7500 руб
+    						</span>
+    						<button class="cart__button">
+    							<span>Удалить</span>
+    							<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M1 1L5.00011 5.00011M5.00011 5.00011L9 9M5.00011 5.00011L1.00043 9M5.00011 5.00011L9 1"
+    									stroke="#80684A" />
+    							</svg>
+    						</button>
+    					</div>
+    				</div>
+    				<div class="cart__card">
+    					<picture class="cart__photo">
+    						<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
+    						<img src="assets/img/cart/product_photo.png" loading="lazy" alt="Фотография товара">
+    					</picture>
+    					<div class="cart__text-content">
+    						<a class="cart__text">
+    							Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
+    						</a>
+    						<span class="cart__price">
+    							7500 руб
+    						</span>
+    						<button class="cart__button">
+    							<span>Удалить</span>
+    							<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M1 1L5.00011 5.00011M5.00011 5.00011L9 9M5.00011 5.00011L1.00043 9M5.00011 5.00011L9 1"
+    									stroke="#80684A" />
+    							</svg>
+    						</button>
+    					</div>
+    				</div>
+    				<div class="cart__card">
+    					<picture class="cart__photo">
+    						<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
+    						<img src="assets/img/cart/product_photo.png" loading="lazy" alt="Фотография товара">
+    					</picture>
+    					<div class="cart__text-content">
+    						<a class="cart__text">
+    							Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
+    						</a>
+    						<span class="cart__price">
+    							7500 руб
+    						</span>
+    						<button class="cart__button">
+    							<span>Удалить</span>
+    							<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M1 1L5.00011 5.00011M5.00011 5.00011L9 9M5.00011 5.00011L1.00043 9M5.00011 5.00011L9 1"
+    									stroke="#80684A" />
+    							</svg>
+    						</button>
+    					</div>
+    				</div>
+    			</div>
     		</div>
-    		<div class="cart__down">
-    			<div class="cart__card">
-    				<picture class="cart__photo">
-    					<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
-    					<img src="assets/img/cart/product_photo.png" alt="Фотография товара">
-    				</picture>
-    				<div class="cart__text-content">
-    					<p class="cart__text">
-    						Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
-    					</p>
-    					<span class="cart__price">
-    						7500 руб
-    					</span>
-    				</div>
-    				<button class="cart__button">
-    				</button>
+    		<div class="cart__info">
+    			<div class="cart__cost">
+    				<span>4 товара на сумму:</span>
+    				<span>22 600 руб</span>
     			</div>
-    			<div class="cart__card">
-    				<picture class="cart__photo">
-    					<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
-    					<img src="assets/img/cart/product_photo.png" alt="Фотография товара">
-    				</picture>
-    				<div class="cart__text-content">
-    					<p class="cart__text">
-    						Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
-    					</p>
-    					<span class="cart__price">
-    						7500 руб
-    					</span>
-    				</div>
-    				<button class="cart__button">
-    				</button>
-    			</div>
-    			<div class="cart__card">
-    				<picture class="cart__photo">
-    					<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
-    					<img src="assets/img/cart/product_photo.png" alt="Фотография товара">
-    				</picture>
-    				<div class="cart__text-content">
-    					<p class="cart__text">
-    						Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
-    					</p>
-    					<span class="cart__price">
-    						7500 руб
-    					</span>
-    				</div>
-    				<button class="cart__button">
-    				</button>
-    			</div>
-    			<div class="cart__card">
-    				<picture class="cart__photo">
-    					<source srcset="assets/img/cart/product_photo.webp" type="image/webp">
-    					<img src="assets/img/cart/product_photo.png" alt="Фотография товара">
-    				</picture>
-    				<div class="cart__text-content">
-    					<p class="cart__text">
-    						Фарфоровая шкатулка с сюжетом из древнегреческой мифологии
-    					</p>
-    					<span class="cart__price">
-    						7500 руб
-    					</span>
-    				</div>
-    				<button class="cart__button">
-    				</button>
-    			</div>
+    			<button class="cart__submit">
+    				<span>перейти к оформлению</span>
+    			</button>
     		</div>
-    	</div>
-    	<div class="cart__info">
-    		<div class="cart__cost">
-    			<span>4 товара на сумму:</span>
-    			<span>22 600 руб</span>
-    		</div>
-    		<button class="cart__submit">
-    			<span>перейти к оформлению</span>
+    		<button class="cart__close">
+    			<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    				<path d="M1 1L5.00011 5.00011M5.00011 5.00011L9 9M5.00011 5.00011L1.00043 9M5.00011 5.00011L9 1" />
+    			</svg>
     		</button>
     	</div>
     </header><main class="main">

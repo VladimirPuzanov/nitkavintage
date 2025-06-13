@@ -1,11 +1,52 @@
-const burger = document.querySelector(".header__burger")
-let header = document.querySelector(".header")
-if (burger && header) {
-  burger.addEventListener("click", () => {
-    header.classList.toggle("active")
-    document.querySelector("html").classList.toggle("lock")
-  })
+function burgerOpen(){
+  document.querySelector("header")?.classList.add("active")
+  document.querySelector("html")?.classList.add("lock")
+  burger.classList.add("active")
+  burger.removeEventListener("click", burgerOpen)
+  burger.addEventListener("click", burgerClose)
 }
+
+function burgerClose(){
+  document.querySelector("header")?.classList.remove("active")
+  document.querySelector("html")?.classList.remove("lock")
+  burger.classList.remove("active")
+  burger.removeEventListener("click", burgerClose)
+  burger.addEventListener("click", burgerOpen)
+}
+
+function cartOpen(){
+  document.querySelector("header")?.classList.remove("active")
+  document.querySelector(".header__cart")?.classList.add("active")
+  document.querySelector("html")?.classList.add("lock")
+  burger.classList.add("active")
+  burger.removeEventListener("click", burgerClose)
+  burger.removeEventListener("click", burgerOpen)
+  burger.addEventListener("click", cartClose)
+}
+
+function cartClose(){
+  document.querySelector(".header__cart")?.classList.remove("active")
+  document.querySelector("html")?.classList.remove("lock")
+  burger.classList.remove("active")
+  burger.removeEventListener("click", cartClose)
+  burger.addEventListener('click', burgerOpen)
+}
+
+const burger = document.querySelector(".header__burger")
+if(burger){
+  burger.addEventListener("click", burgerOpen)
+}
+
+const cart = document.querySelector(".header__button_cart")
+if(cart){
+  cart.addEventListener('click', cartOpen)
+}
+
+const cartCloseBtn = document.querySelector(".cart__close")
+if(cartCloseBtn){
+  cartCloseBtn.addEventListener("click", cartClose)
+}
+
 
 const observer = new IntersectionObserver((entries) => {
   let animationDelay = 0;
