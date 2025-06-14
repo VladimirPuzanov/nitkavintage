@@ -447,13 +447,15 @@
 	position: fixed;
 	right: -100vw;
 	transition: right 1s;
-	max-width: 100vw;
+	max-width: 700px;
+	width: 100%;
 	height: 100%;
 	max-height: calc(100vh - 77px);
 	display: flex;
 	flex-direction: column;
 
 	@media(min-width: 1024px) {
+		max-width: 950px;
 		max-height: 100vh;
 		top: 0;
 	}
@@ -467,10 +469,17 @@
 	background-color: $background-soft;
 	display: flex;
 	flex-direction: column;
-	height: calc(100vh - 240px);
+	width: 100%;
+	max-width: 700px;
+	height: 100%;
+	max-height: calc(100vh - 240px);
+	z-index: 1;
+	overflow: hidden;
 
 	@media(min-width: 1024px) {
-		height: calc(100vh - 190px);
+		max-height: calc(100vh - 190px);
+		width: 100%;
+		max-width: 950px;
 	}
 
 	&__up {
@@ -649,6 +658,7 @@
 				@media(hover : hover) {
 					transition: color 0.5s;
 					position: relative;
+
 					&::after {
 						content: "";
 						position: absolute;
@@ -659,8 +669,9 @@
 						background-color: $brown;
 					}
 
-					&:hover{
+					&:hover {
 						color: $brown;
+
 						&::after {
 							width: 100%;
 						}
@@ -811,8 +822,395 @@
 						}
 					}
 				}
+			}
+		}
+	}
+}
 
+.header__form {
+	position: fixed;
+	right: -100vw;
+	transition: right 1s;
+	max-width: 700px;
+	width: 100%;
+	height: 100%;
+	max-height: calc(100vh - 77px);
+	display: flex;
+	flex-direction: column;
 
+	@media(min-width: 1024px) {
+		max-width: 950px;
+		max-height: 100vh;
+		top: 0;
+	}
+
+	&.active {
+		right: 0;
+	}
+}
+
+.form {
+	background-color: $background-soft;
+	padding: 40px 15px;
+	padding-right: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	@media(min-width: 1024px) {
+		padding: 60px;
+	}
+
+	&__close {
+		font-family: Manrope;
+		font-weight: 500;
+		font-size: 14px;
+		text-transform: uppercase;
+		color: $secondary-grey;
+		display: flex;
+		align-items: center;
+		gap: 3px;
+		margin-bottom: 15px;
+
+		&::before {
+			content: "";
+			display: block;
+			width: 7px;
+			height: 7px;
+			border-left: solid 2px $secondary-grey;
+			border-bottom: solid 2px $secondary-grey;
+			transform: rotate(45deg);
+			margin-bottom: 2px;
+		}
+
+		@media(min-width: 1024px) {
+			font-size: 16px;
+			margin-bottom: auto;
+		}
+	}
+
+	&__title {
+		font-family: Manrope;
+		font-weight: 400;
+		font-size: 40px;
+		text-transform: uppercase;
+		color: $text-grey;
+		margin-bottom: 35px;
+
+		@media(max-width: 410px) {
+			font-size: 32px;
+		}
+
+		@media(min-width: 1024px) {
+			font-size: 88px;
+			margin-bottom: 50px;
+		}
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		height: 100%;
+
+		@media(min-width: 1024px) {
+			gap: 0;
+			height: auto;
+		}
+
+		input {
+			padding-bottom: 12px;
+			border: none;
+			border-bottom: solid 1px $brown;
+			background-color: $background-soft;
+			font-family: Manrope;
+			font-weight: 500;
+			font-size: 14px;
+			color: $text-grey;
+
+			&::placeholder {
+				text-transform: uppercase;
+			}
+
+			@media(min-width: 1024px) {
+				font-size: 18px;
+				margin-bottom: 60px;
+			}
+		}
+
+		>p:not(.form__info) {
+			margin-top: 30px;
+			margin-bottom: 20px;
+			font-family: Manrope;
+			font-weight: 500;
+			font-size: 16px;
+			color: $text-grey;
+			text-transform: uppercase;
+
+			@media(min-width: 1024px) {
+				font-size: 18px;
+				margin-bottom: 25px;
+			}
+		}
+
+		input[type=checkbox] {
+			cursor: pointer;
+			border: none;
+			appearance: none;
+			position: relative;
+			width: 18px;
+			height: 18px;
+			background: $brown;
+			overflow: hidden;
+
+			@media(min-width: 1024px) {
+				margin-bottom: 0;
+				width: 20px;
+				height: 20px;
+			}
+
+			&::after {
+				content: "";
+				background-color: $grey;
+				display: block;
+				width: 26px;
+				height: 26px;
+				position: absolute;
+				transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s, transform 0.3s;
+				top: calc(50% - 13px);
+				left: calc(50% - 13px);
+			}
+
+			&:checked {
+				&::after {
+					width: 8px;
+					height: 8px;
+					top: calc(50% - 4px);
+					left: calc(50% - 4px);
+					transform: rotate(45deg);
+				}
+			}
+		}
+
+		button {
+			padding: 15px;
+			width: 100%;
+			background-color: $brown;
+			transition: background-color 0.6s;
+
+			@media(min-width: 1024px) {
+				padding: 25px;
+			}
+
+			@media(hover : hover) {
+				&:hover {
+					background-color: $brown-active;
+
+					span {
+						&::before {
+							margin-right: 10px
+						}
+
+						&::after {
+							margin-left: 10px
+						}
+					}
+				}
+			}
+
+			span {
+				font-family: Manrope;
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 20px;
+				text-transform: uppercase;
+				color: $background-soft;
+
+				@media(min-width: 1024px) {
+					font-size: 16px;
+				}
+
+				&::after {
+					content: "/";
+					display: inline-block;
+					margin-left: 3px;
+					transition: margin 0.5s;
+				}
+
+				&::before {
+					content: "/";
+					display: inline-block;
+					margin-right: 3px;
+					transition: margin 0.5s;
+				}
+			}
+		}
+	}
+
+	&__checks {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin-bottom: auto;
+
+		@media(min-width: 1024px) {
+			flex-direction: row;
+			gap: 30px;
+			margin-bottom: 90px;
+		}
+	}
+
+	&__checkbox-row {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		label {
+			font-family: Manrope;
+			font-weight: 500;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: $text-grey;
+
+			@media(min-width: 1024px) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&__info {
+		font-family: Manrope;
+		font-weight: 500;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $text-grey;
+		margin-bottom: 15px;
+		opacity: 0.8;
+
+		@media(min-width: 1024px) {
+			font-size: 14px;
+			margin-bottom: 25px;
+		}
+	}
+}
+
+.header__result {
+	position: fixed;
+	right: -100vw;
+	transition: right 1s;
+	max-width: 700px;
+	width: 100%;
+	height: 100%;
+	max-height: calc(100vh - 77px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $background-soft;
+	padding: 15px;
+
+	@media(min-width: 1024px) {
+		max-width: 950px;
+		max-height: 100vh;
+		top: 0;
+	}
+
+	&.active {
+		right: 0;
+	}
+
+	.result {
+		width: 100%;
+		max-width: 550px;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+
+		@media(min-width: 1024px) {
+			height: auto;
+		}
+
+		p:first-child {
+			font-family: Manrope;
+			font-weight: 400;
+			font-size: 26px;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+			margin-top: auto;
+			padding-bottom: 0;
+
+			@media(min-width: 1024px) {
+				font-size: 48px;
+				margin-bottom: 30px;
+			}
+		}
+
+		p {
+			font-family: Manrope;
+			font-weight: 500;
+			font-size: 14px;
+			text-align: center;
+			text-transform: uppercase;
+			color: $text-grey;
+			margin-bottom: auto;
+			padding-bottom: 100px;
+
+			@media(min-width: 1024px) {
+				font-size: 18px;
+				padding: 0;
+				margin-bottom: 60px;
+			}
+		}
+
+		button {
+			padding: 15px;
+			background-color: $brown;
+			transition: background-color 0.6s;
+
+			@media(hover : hover) {
+				&:hover {
+					background-color: $brown-active;
+
+					span{
+						&::after{
+							margin-left: 10px;
+						}
+
+						&::before{
+							margin-right: 10px;
+						}
+					}
+				}
+			}
+
+			@media(min-width: 1024px) {
+				padding: 25px;
+
+				span {
+					font-size: 16px;
+				}
+			}
+
+			span {
+				font-family: Manrope;
+				font-weight: 600;
+				font-size: 12px;
+				text-transform: uppercase;
+				color: $background-soft;
+
+				&::before {
+					content: "/";
+					display: inline-block;
+					margin-right: 3px;
+					transition: margin 0.6s;
+				}
+
+				&::after {
+					content: "/";
+					display: inline-block;
+					margin-left: 3px;
+					transition: margin 0.6s;
+				}
 			}
 		}
 	}
