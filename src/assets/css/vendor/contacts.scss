@@ -1,0 +1,125 @@
+.contacts {
+	display: flex;
+	height: calc(100vh - 77px);
+	flex-direction: column;
+	padding: 15px;
+	background-image: url("../img/contacts/background.jpg");
+	background-size: auto 100%;
+	background-position: 75% 0;
+	margin-bottom: 60px;
+
+	@media(min-width: 1024px) {
+		background-position: 70% auto;
+		background-size: cover;
+		padding: 40px;
+		padding-top: 52px;
+	}
+
+	&__bread {
+		margin: 0 auto;
+		margin-bottom: auto;
+		display: flex;
+		gap: 10px;
+		transition: transform 1s, opacity 1s;
+
+		a,
+		span {
+			display: block;
+			color: $background-soft;
+			font-family: Manrope;
+			font-weight: 500;
+			font-size: 12px;
+			text-transform: uppercase;
+
+			@media(min-width: 1024px) {
+				font-size: 16px;
+			}
+		}
+
+		a {
+			opacity: 0.6;
+
+			&::after {
+				content: "//";
+				margin-left: 10px;
+			}
+		}
+	}
+
+	&__content {
+		background-color: $background-soft;
+		padding: 25px;
+		margin-bottom: 4px;
+		max-width: 600px;
+		transition: transform 1s;
+
+		@media(min-width: 1024px) {
+			padding: 40px;
+			padding-top: 35px;
+		}
+	}
+
+	&__title {
+		font-family: Manrope;
+		font-weight: 400;
+		font-size: 26px;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+
+		@media(min-width: 1024px) {
+			font-size: 42px;
+			margin-bottom: 35px;
+		}
+	}
+
+	&__row {
+		padding: 15px 0;
+		border-top: solid 1px $brown;
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	&:last-child {
+		border-bottom: solid 1px $brown;
+	}
+
+	&__text,
+	&__info {
+		font-family: Manrope;
+		font-weight: 500;
+		font-size: 14px;
+		text-transform: uppercase;
+		text-align: right;
+
+		@media(min-width: 1024px) {
+			font-size: 16px;
+			max-width: 275px;
+		}
+
+		a {
+			display: block;
+			margin-bottom: 5px;
+			transition: color 0.6s;
+
+			@media(hover : hover){
+				&:hover{
+					color: $brown;
+				}
+			}
+		}
+	}
+
+	&__text {
+		text-align: left;
+		opacity: 0.6;
+	}
+
+	&__item {
+		height: 4px;
+		width: 100%;
+		background-color: $background-soft;
+		max-width: 600px;
+		transition: transform 1s, opacity 1s;
+	}
+}

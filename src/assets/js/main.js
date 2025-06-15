@@ -57,6 +57,13 @@ function submit(e) {
   burger.addEventListener("click", submitClose)
 }
 
+function truncateWithoutWordBreak(str, maxLength) {
+  if (str.length <= maxLength) return str;
+  const lastSpaceIndex = str.lastIndexOf(' ', maxLength);
+  const cutPoint = lastSpaceIndex > 0 ? lastSpaceIndex : maxLength;
+  return str.slice(0, cutPoint).trim() + "...";
+}
+
 const burger = document.querySelector(".header__burger")
 if (burger) {
   burger.addEventListener("click", burgerOpen)
@@ -88,7 +95,7 @@ if (submitBtn) {
 }
 
 const closeSubmitBtn = document.querySelector(".header__result button")
-if(closeSubmitBtn){
+if (closeSubmitBtn) {
   closeSubmitBtn.addEventListener("click", submitClose)
   closeSubmitBtn.addEventListener("click", formClose)
   closeSubmitBtn.addEventListener("click", cartClose)
@@ -120,6 +127,74 @@ if (animatedItems.length > 0) {
   animatedItems.forEach(item => {
     observer.observe(item)
   })
+}
+
+const descAcc = document.querySelectorAll(".product__text")
+if (descAcc.length > 0) {
+  descAcc.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle("active")
+      content = btn.nextElementSibling
+      if (content) {
+        if (content.style.maxHeight) {
+          content.removeAttribute("style")
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px"
+        }
+      }
+    })
+  });
+}
+
+const bigView = document.querySelector(".catalog-page__view_big")
+const listView = document.querySelector(".catalog-page__view_list")
+const smallView = document.querySelector(".catalog-page__view_small")
+const catalogPage = document.querySelector(".catalog-page")
+
+if (catalogPage) {
+  if (bigView) {
+    if (window.innerWidth >= 1024) {
+      bigView.classList.add("active")
+    }
+    bigView.addEventListener("click", () => {
+      listView?.classList.remove("active")
+      smallView?.classList.remove("active")
+      bigView?.classList.add("active")
+      if (window.innerWidth < 1024) {
+        catalogPage.classList.add("small")
+      } else {
+        catalogPage.classList.remove("small")
+        catalogPage.classList.remove("list")
+      }
+    })
+  }
+  if (smallView) {
+    smallView.addEventListener("click", () => {
+      bigView?.classList.remove("active")
+      listView?.classList.remove("active")
+      smallView?.classList.add("active")
+      catalogPage.classList.remove("big")
+      catalogPage.classList.remove("list")
+      catalogPage.classList.add("small")
+    })
+  }
+  if (listView) {
+    if (window.innerWidth < 1024) {
+      listView.classList.add("active")
+    }
+    listView.addEventListener("click", () => {
+      bigView?.classList.remove("active")
+      smallView?.classList.remove("active")
+      listView?.classList.add("active")
+      if (window.innerWidth < 1024) {
+        catalogPage.classList.remove("small")
+      } else {
+        catalogPage.classList.remove("big")
+        catalogPage.classList.remove("small")
+        catalogPage.classList.add("list")
+      }
+    })
+  }
 }
 
 const CursorFunction = () => {
