@@ -3568,6 +3568,144 @@ body {
   }
 }
 
+.text {
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 65px;
+}
+@media (min-width: 1024px) {
+  .text {
+    font-size: 18px;
+    margin-bottom: 230px;
+  }
+}
+.text__container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 630px;
+}
+.text__button {
+  display: block;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  background-color: #80684A;
+  transition: background-color 0.6s;
+}
+@media (min-width: 1024px) {
+  .text__button {
+    padding: 25px;
+  }
+  .text__button span {
+    font-size: 16px;
+  }
+}
+@media (hover: hover) {
+  .text__button:hover {
+    background-color: #805926;
+  }
+  .text__button:hover span::after {
+    margin-left: 10px;
+  }
+  .text__button:hover span::before {
+    margin-right: 10px;
+  }
+}
+.text__button span {
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #FFF9F3;
+}
+@media (min-width: 1024px) {
+  .text__button span {
+    font-size: 16px;
+  }
+}
+.text__button span::after {
+  content: "/";
+  display: inline-block;
+  margin-left: 3px;
+  transition: margin 0.6s;
+}
+.text__button span::before {
+  content: "/";
+  display: inline-block;
+  margin-right: 3px;
+  transition: margin 0.6s;
+}
+.text h2 {
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+@media (min-width: 1024px) {
+  .text h2 {
+    margin-bottom: 40px;
+    margin-top: 80px;
+    font-size: 48px;
+  }
+}
+.text h2:first-child {
+  margin-top: 0;
+}
+.text p {
+  margin-bottom: 15px;
+}
+@media (min-width: 1024px) {
+  .text p {
+    margin-bottom: 30px;
+  }
+}
+
+.content-table {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .content-table {
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 95px;
+  }
+}
+.content-table a {
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333333;
+  opacity: 0.6;
+}
+@media (min-width: 1024px) {
+  .content-table a {
+    font-size: 18px;
+  }
+}
+.content-table a::after {
+  content: "/";
+  display: inline-block;
+  margin-left: 12px;
+}
+@media (min-width: 1024px) {
+  .content-table a::after {
+    margin-left: 30px;
+  }
+}
+.content-table li:last-child a::after {
+  display: none;
+}
+
 .cursor {
   position: fixed;
   left: 0;
