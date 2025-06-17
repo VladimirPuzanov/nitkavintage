@@ -108,6 +108,7 @@
 	flex-wrap: wrap;
 	padding-top: 20px;
 	padding-bottom: 40px;
+	transition: opacity 0.6s, transform 0.6s;
 
 	@media(min-width: 1024px) {
 		gap: 30px;

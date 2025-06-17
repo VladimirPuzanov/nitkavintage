@@ -1382,13 +1382,14 @@ body {
 }
 .form form button {
   padding: 15px;
-  width: 100%;
+  width: calc(100% - 15px);
   background-color: #80684A;
   transition: background-color 0.6s;
 }
 @media (min-width: 1024px) {
   .form form button {
     padding: 25px;
+    width: 100%;
   }
 }
 @media (hover: hover) {
@@ -2384,6 +2385,7 @@ body {
   gap: 10px;
   justify-content: center;
   margin-bottom: 52px;
+  transition: opacity 0.6s, transform 0.6s;
 }
 @media (min-width: 1024px) {
   .catalog-intro__bread {
@@ -2416,6 +2418,7 @@ body {
 .catalog-intro__title {
   font-size: 40px;
   margin-bottom: 20px;
+  transition: opacity 0.6s, transform 0.6s;
 }
 @media (min-width: 1024px) {
   .catalog-intro__title {
@@ -2892,6 +2895,16 @@ body {
   font-weight: 400;
   font-style: italic;
   color: #80684A;
+}
+
+.about-person {
+  margin-bottom: 75px;
+}
+.about-person__content {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .footer__logo {
@@ -3671,6 +3684,7 @@ body {
   flex-wrap: wrap;
   padding-top: 20px;
   padding-bottom: 40px;
+  transition: opacity 0.6s, transform 0.6s;
 }
 @media (min-width: 1024px) {
   .content-table {
