@@ -375,7 +375,7 @@
 			position: absolute;
 			transition: opacity 1s, transform 1s;
 
-			@media(max-width: 1530px){
+			@media(max-width: 1530px) {
 				display: none;
 			}
 
@@ -386,7 +386,7 @@
 				&.to_animate {
 					opacity: 0;
 					transform: none;
-					
+
 					&.animated {
 						opacity: 1;
 						transform: rotate(-15deg);
@@ -401,7 +401,7 @@
 				&.to_animate {
 					opacity: 0;
 					transform: none;
-					
+
 					&.animated {
 						opacity: 1;
 						transform: rotate(15deg);
@@ -414,21 +414,40 @@
 
 .about-person {
 	margin-bottom: 75px;
+	@media(min-width: 1024px){
+		margin-bottom: 240px;
+	}
 
 	&__content {
 		padding: 0 15px;
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		overflow: hidden;
+
+		@media(min-width: 1024px) {
+			flex-direction: row;
+			gap: 30px;
+		}
 	}
 
 	&__col {
 		display: flex;
 		flex-direction: column;
+		transition: opasity 1s, transform 1s;
+
+		@media(min-width: 1024px) {
+			flex-basis: calc(50% - 15px);
+		}
 
 		&_text {
 			padding: 75px 20px;
 			position: relative;
+
+			@media(min-width: 1024px) {
+				justify-content: center;
+				align-items: center;
+			}
 		}
 
 		&_img {
@@ -437,6 +456,7 @@
 			margin: -5px;
 
 			img {
+				aspect-ratio: 1;
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
@@ -449,6 +469,11 @@
 	&__title {
 		font-size: 36px;
 		margin-bottom: 15px;
+
+		@media(min-width: 1024px) {
+			font-size: 102px;
+			margin-bottom: 25px;
+		}
 	}
 
 	&__subtitle {
@@ -459,6 +484,13 @@
 		text-transform: uppercase;
 		color: $text-grey;
 		margin-bottom: 50px;
+		opacity: 0.6;
+
+		@media(min-width: 1024px) {
+			font-size: 16px;
+			max-width: 510px;
+			margin-bottom: 120px;
+		}
 	}
 
 	&__list-title {
@@ -468,6 +500,11 @@
 		text-align: center;
 		text-transform: uppercase;
 		margin-bottom: 20px;
+
+		@media(min-width: 1024px) {
+			font-size: 28px;
+			margin-bottom: 30px;
+		}
 	}
 
 	&__background-item {
@@ -477,6 +514,13 @@
 		width: 100%;
 		top: 0;
 		left: 0;
+
+		@media(min-width: 1024px) {
+			svg {
+				width: 80px;
+				height: 80px;
+			}
+		}
 
 		svg:last-child {
 			transform: rotate(90deg);
@@ -494,6 +538,11 @@
 		flex-direction: column;
 		gap: 10px;
 
+		@media(min-width: 1024px) {
+			flex-direction: row;
+			gap: 20px;
+		}
+
 		li {
 			font-family: Manrope;
 			font-weight: 500;
@@ -501,8 +550,12 @@
 			text-align: center;
 			text-transform: uppercase;
 			align-items: center;
-			gap: 10px;
 			color: $text-grey;
+			@media(min-width: 1024px){
+				padding-right: 48px;
+				position: relative;
+				font-size: 16px;
+			}
 
 			span {
 				font-size: Playfair Display;
@@ -519,9 +572,20 @@
 				margin-top: 10px;
 				transform: rotate(45deg);
 				background-color: $brown;
+
+				@media(min-width: 1024px) {
+					display: inline-block;
+					position: absolute;
+					right: 20px;
+					top: calc(50% - 4px);
+					margin: 0;
+				}
 			}
 
 			&:last-child {
+				@media(min-width: 1024px){
+					padding-right: 0;
+				}
 				&::after {
 					content: none;
 				}

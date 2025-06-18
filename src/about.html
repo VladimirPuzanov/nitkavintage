@@ -45,9 +45,24 @@
 			время</p>
 	</div>
 </section>
+<section class="about-slider">
+	<div class="about-slider__content swiper">
+		<div class="swiper-wrapper">
+			<div class="about-slider__photo swiper-slide">
+				1
+			</div>
+			<div class="about-slider__photo swiper-slide">
+				2
+			</div>
+			<div class="about-slider__photo swiper-slide">
+				3
+			</div>
+		</div>
+	</div>
+</section>
 <section class="about-person">
 	<div class="about-person__content">
-		<div class="about-person__col about-person__col_text">
+		<div class="about-person__col about-person__col_text to_animate left-fade">
 			<div class="about-person__background-item">
 				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<g opacity="0.4">
@@ -1693,7 +1708,7 @@
 				</svg>
 			</div>
 		</div>
-		<div class="about-person__col about-person__col_img">
+		<div class="about-person__col about-person__col_img to_animate right-fade">
 			<picture>
 				<source srcset="assets/img/about/person.webp" type="image/webp">
 				<img src="assets/img/about/person.jpg" alt="Юлия Мизёва">
@@ -1702,3 +1717,30 @@
 	</div>
 </section>
 {{>social}}
+
+<script src="assets/js/build/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="assets/css/build/swiper.css">
+<script>
+	swiper = new Swiper(".about-slider__content", {
+		freeMode: true,
+		watchSlidesProgress: true,
+		spaceBetween: 15,
+		slidesPerView: 1.1,
+		// navigation: {
+		// 		nextEl: document.querySelector('.interes__button_next'),
+		// 		prevEl: document.querySelector('.interes__button_prev'),
+		// 	},
+		breakpoints: {
+
+			650: {
+				spaceBetween: 15,
+				slidesPerView: 2,
+			},
+
+			1024: {
+				spaceBetween: 20,
+				slidesPerView: 2,
+			}
+		}
+	});
+</script>
