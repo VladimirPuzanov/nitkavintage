@@ -157,25 +157,31 @@ if (catalogPage) {
       bigView.classList.add("active")
     }
     bigView.addEventListener("click", () => {
+      catalogReloadAnimation()
       listView?.classList.remove("active")
       smallView?.classList.remove("active")
       bigView?.classList.add("active")
-      if (window.innerWidth < 1024) {
-        catalogPage.classList.add("small")
-      } else {
-        catalogPage.classList.remove("small")
-        catalogPage.classList.remove("list")
-      }
+      setTimeout(() => {
+        if (window.innerWidth < 1024) {
+          catalogPage.classList.add("small")
+        } else {
+          catalogPage.classList.remove("small")
+          catalogPage.classList.remove("list")
+        }
+      }, 600);
     })
   }
   if (smallView) {
     smallView.addEventListener("click", () => {
+      catalogReloadAnimation()
       bigView?.classList.remove("active")
       listView?.classList.remove("active")
       smallView?.classList.add("active")
-      catalogPage.classList.remove("big")
-      catalogPage.classList.remove("list")
-      catalogPage.classList.add("small")
+      setTimeout(() => {
+        catalogPage.classList.remove("big")
+        catalogPage.classList.remove("list")
+        catalogPage.classList.add("small")
+      }, 600);
     })
   }
   if (listView) {
@@ -183,16 +189,19 @@ if (catalogPage) {
       listView.classList.add("active")
     }
     listView.addEventListener("click", () => {
+      catalogReloadAnimation()
       bigView?.classList.remove("active")
       smallView?.classList.remove("active")
       listView?.classList.add("active")
-      if (window.innerWidth < 1024) {
-        catalogPage.classList.remove("small")
-      } else {
-        catalogPage.classList.remove("big")
-        catalogPage.classList.remove("small")
-        catalogPage.classList.add("list")
-      }
+      setTimeout(() => {
+        if (window.innerWidth < 1024) {
+          catalogPage.classList.remove("small")
+        } else {
+          catalogPage.classList.remove("big")
+          catalogPage.classList.remove("small")
+          catalogPage.classList.add("list")
+        }
+      }, 600);
     })
   }
 }

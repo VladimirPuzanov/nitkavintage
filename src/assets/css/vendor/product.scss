@@ -19,6 +19,25 @@
 		margin-bottom: 52px;
 		text-align: center;
 		opacity: 0.6;
+		transition: opacity 0.6s, transform 0.6s;
+
+		&.to_animate {
+			opacity: 0;
+			transform: translateY(-50px);
+
+			&.animated {
+				opacity: 0.6;
+				transform: translateY(0);
+
+				@media(hover : hover) {
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+
 
 		@media(min-width: 1024px) {
 			font-size: 16px;
@@ -182,6 +201,23 @@
 		padding: 15px;
 		display: block;
 		background-color: $brown;
+		transition: background-color 0.6s;
+
+		@media(hover : hover) {
+			&:hover {
+				background-color: $brown-active;
+
+				span {
+					&::after {
+						margin-left: 10px;
+					}
+
+					&::before {
+						margin-right: 10px;
+					}
+				}
+			}
+		}
 
 		&.mobile {
 			display: block;
@@ -223,6 +259,10 @@
 		}
 	}
 
+	&__wrapper_page {
+		transition: opacity 0.6s, transform 0.6s;
+	}
+
 	@media(min-width: 1024px) {
 		&__wrapper_page {
 			display: flex;
@@ -239,8 +279,10 @@
 	}
 }
 
+
 .mySwiper2 {
 	margin-bottom: 8px;
+	transition: opacity 0.6s, tranform 0.6s;
 
 	.swiper-slide {
 		aspect-ratio: 32/41;
@@ -270,6 +312,7 @@
 
 .mySwiper {
 	margin-bottom: 30px;
+	transition: opacity 0.6s, tranform 0.6s;
 
 	@media(min-width: 1024px) {
 		display: none !important;
@@ -295,6 +338,7 @@
 }
 
 .interes {
+	transition: opacity 0.6s, tranform 0.6s;
 	margin-bottom: 75px;
 
 	@media(min-width: 1024px) {
@@ -338,8 +382,18 @@
 		}
 	}
 
+	.swiper-slide{
+		transition: opacity 0.5s;
+		@media(hover : hover){
+			&:hover{
+				opacity: 0.8;
+			}
+		}
+	}
+
 	&__buttons {
 		display: none;
+
 		@media(min-width: 1024px) {
 			display: flex;
 			justify-content: center;
@@ -347,15 +401,27 @@
 		}
 	}
 
-	&__button{
+	&__button {
 		width: 70px;
 		height: 70px;
 		background-color: $grey;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: background-color 0.6s;
 
-		&::after{
+		@media(hover : hover) {
+			&:hover {
+				background-color: $brown;
+
+				&::after {
+					border-right: 2px solid $background-soft;
+					border-bottom: 2px solid $background-soft;
+				}
+			}
+		}
+
+		&::after {
 			content: "";
 			display: block;
 			width: 12px;
@@ -363,10 +429,11 @@
 			border-right: 2px solid $brown;
 			border-bottom: 2px solid $brown;
 			transform: rotate(-45deg);
+			transition: border 0.6s;
 		}
 
-		&_prev{
-			&::after{
+		&_prev {
+			&::after {
 				transform: rotate(135deg);
 			}
 		}
