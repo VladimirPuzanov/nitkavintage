@@ -51,8 +51,6 @@ function submitClose() {
 }
 
 function submit(e) {
-  e.preventDefault()
-  document.querySelector(".header__result")?.classList.add("active")
   document.querySelector(".cart__close")?.addEventListener("click", submitClose)
   burger.addEventListener("click", submitClose)
 }
